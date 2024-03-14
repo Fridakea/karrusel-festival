@@ -7,6 +7,10 @@
 
     --text-color: #ffffff;
     --text-shade-color: #EDEDED;
+
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 24px;
 }
 
 * {
@@ -23,7 +27,7 @@ main {
 }
 
 /* Styling text */
-h1, h2, h3, h4 {
+h1, h2, h3, h4, a {
     text-transform: uppercase;
 }
 
@@ -41,6 +45,11 @@ h3 {
 
 p {
     font-size: 1rem;
+    margin-bottom: var(--spacing-small);
+}
+
+a {
+    margin-bottom: var(--spacing-small);
 }
 
 /* General styling with flex and grid */
@@ -57,6 +66,31 @@ p {
 .flex-center {
     justify-content: center;
     align-items: center;
+}
+
+.gap-s {
+    gap: var(--spacing-small);
+}
+
+.gap-m {
+    gap: var(--spacing-medium);
+}
+
+.gap-l {
+    gap: var(--spacing-large);
+}
+
+/* General classnames for spacing */
+.mb-s {
+    margin-bottom: var(--spacing-small);
+}
+
+.mb-m {
+    margin-bottom: var(--spacing-medium);
+}
+
+.mb-l {
+    margin-bottom: var(--spacing-large);
 }
 
 /* General styling for buttons */
