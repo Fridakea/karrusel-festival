@@ -2,6 +2,7 @@
 import FacebookIcon from "../components/icons/Facebook-icon.astro";
 import SoundcloudIcon from "../components/icons/Soundcloud-icon.astro";
 import InstagramIcon from "../components/icons/Instagram-icon.astro";
+import Logo from "../components/icons/Logo.astro";
 ---
 
 <div class="footer-container">
@@ -26,11 +27,7 @@ import InstagramIcon from "../components/icons/Instagram-icon.astro";
     </form>
 
     <a class="pc-only" href="/">
-      <img
-        class="logo-style"
-        src="../../public/icons/logo.png"
-        alt="Karrusel logo"
-      />
+      <Logo />
     </a>
   </div>
 
@@ -58,7 +55,7 @@ import InstagramIcon from "../components/icons/Instagram-icon.astro";
   </div>
 
   <a class="pc-hide" href="/">
-    <img src="../../public/icons/logo.png" alt="Karrusel logo" />
+    <Logo />
   </a>
 </div>
 
@@ -116,10 +113,6 @@ import InstagramIcon from "../components/icons/Instagram-icon.astro";
 
     a {
       margin-bottom: var(--spacing-medium);
-    }
-
-    img {
-      width: 200px;
     }
   }
 </style>

@@ -112,3 +112,13 @@ button {
 .icon-style:hover {
     fill: var(--secondary-shade-color);
 }
+
+/* Styling the logo and it's hover effect */
+.logo-style {
+    stroke: var(--secondary-color);
+    transition: 0.2s ease-in-out;
+}
+
+.logo-style:hover {
+    stroke: var(--secondary-shade-color);
+}
