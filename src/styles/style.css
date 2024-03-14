@@ -13,4 +13,48 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Styling text */
+h1, h2, h3, h4 {
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+/* General styling with flex and grid */
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
 }
