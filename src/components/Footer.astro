@@ -1,5 +1,7 @@
 ---
-
+import FacebookIcon from "../components/icons/Facebook-icon.astro";
+import SoundcloudIcon from "../components/icons/Soundcloud-icon.astro";
+import InstagramIcon from "../components/icons/Instagram-icon.astro";
 ---
 
 <div class="footer-container">
@@ -13,6 +15,15 @@
 
   <div class="flex-col flex-center mb-l">
     <h4>Join our newsletter</h4>
+
+    <form class="mb-l">
+      <input type="email" placeholder="EMAIL" />
+      <img src="../../public/icons/signup-button.svg" alt="" /><input
+        class="signup-button"
+        type="submit"
+        value=" "
+      />
+    </form>
 
     <a class="pc-only" href="/">
       <img
@@ -32,32 +43,22 @@
 
     <div class="flex-col flex-center mb-l">
       <h4>Follow us</h4>
-      <div class="flex-row gap-m">
+      <div class="flex-row gap-m flex-center">
         <a href="https://www.facebook.com/Karruselfestival">
-          <img src="../../public/icons/facebook-pink.svg" alt="Facebook ikon" />
+          <FacebookIcon />
         </a>
         <a href="https://on.soundcloud.com/pZ4aZX9xPWEj54818">
-          <img
-            src="../../public/icons/soundcloud-pink.svg"
-            alt="Soundcloud ikon"
-          />
+          <SoundcloudIcon />
         </a>
         <a href="https://www.instagram.com/karruselfest">
-          <img
-            src="../../public/icons/instagram-pink.svg"
-            alt="Instagram ikon"
-          />
+          <InstagramIcon />
         </a>
       </div>
     </div>
   </div>
 
   <a class="pc-hide" href="/">
-    <img
-      class="logo-style"
-      src="../../public/icons/logo.png"
-      alt="Karrusel logo"
-    />
+    <img src="../../public/icons/logo.png" alt="Karrusel logo" />
   </a>
 </div>
 
@@ -83,13 +84,23 @@
     text-decoration: underline;
   }
 
-  img {
-    width: 35px;
-    height: 100%;
+  input {
+    padding: 12px;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    opacity: 0.5;
   }
 
-  .logo-style {
+  input.signup-button {
+    border: 3px solid var(--tertiary-color);
+    box-shadow: 0 0 10px var(--tertiary-color);
+    color: var(--text-color);
+    opacity: 1;
+  }
+
+  img {
     width: 150px;
+    height: 100%;
   }
 
   @media (min-width: 768px) {
@@ -107,7 +118,7 @@
       margin-bottom: var(--spacing-medium);
     }
 
-    .logo-style {
+    img {
       width: 200px;
     }
   }

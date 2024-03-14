@@ -102,3 +102,13 @@ a {
 button {
     cursor: pointer;
 }
+
+/* Styling icons and their hover effect */
+.icon-style {
+    fill: var(--secondary-color);
+    transition: 0.2s ease-in-out;
+}
+
+.icon-style:hover {
+    fill: var(--secondary-shade-color);
+}
