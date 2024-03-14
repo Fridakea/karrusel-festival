@@ -2,7 +2,7 @@
 const { buttonText } = Astro.props;
 ---
 
-<button>{buttonText}</button>
+<button>klik her</button>
 
 <style>
   button {
@@ -10,5 +10,12 @@ const { buttonText } = Astro.props;
     height: 45px;
     border: 3px solid var(--tertiary-color);
     box-shadow: 0 0 10px var(--tertiary-color);
+    text-transform: uppercase;
+  }
+
+  button:hover {
+    text-decoration: underline;
+    border: 3px solid var(--tertiary-shade-color);
+    box-shadow: 0 0 10px var(--tertiary-shade-color);
   }
 </style>

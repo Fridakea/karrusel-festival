@@ -1,12 +1,12 @@
 :root {
     --primary-color: #212121;
     --secondary-color: #E55DF5;
-    --secondary-hover-color: #8C1692;
+    --secondary-shade-color: #8C1692;
     --tertiary-color: #3ED0FF;
-    --tertiary-hover-color: #0076A7;
+    --tertiary-shade-color: #0076A7;
 
     --text-color: #ffffff;
-    --text-color-shade: #EDEDED;
+    --text-shade-color: #EDEDED;
 }
 
 * {
@@ -57,4 +57,9 @@ p {
 .flex-center {
     justify-content: center;
     align-items: center;
+}
+
+/* General styling for buttons */
+button {
+    cursor: pointer;
 }
