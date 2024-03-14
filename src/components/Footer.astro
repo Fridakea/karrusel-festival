@@ -5,44 +5,60 @@
 <div class="footer-container">
   <div class="flex-col flex-center mb-l">
     <h4>shortcuts</h4>
-    <a href="/#">Tickets</a>
-    <a href="/#">Program</a>
-    <a href="/#">Practical info</a>
-    <a href="/#">About us</a>
+    <a href="/tickets">Tickets</a>
+    <a href="/program">Program</a>
+    <a href="/practical-info">Practical info</a>
+    <a href="/about-us">About us</a>
   </div>
 
   <div class="flex-col flex-center mb-l">
     <h4>Join our newsletter</h4>
+
+    <a class="pc-only" href="/">
+      <img
+        class="logo-style"
+        src="../../public/icons/logo.png"
+        alt="Karrusel logo"
+      />
+    </a>
   </div>
 
-  <div class="flex-col flex-center mb-l">
-    <h4>Contact us</h4>
-    <p>Festival address:</p>
-    <p class="mb-m">Refshalevej 193, 1432 Copenhagen</p>
-    <p>Email:</p>
-    <p>info@nusnus.dk</p>
-  </div>
+  <div>
+    <div class="flex-col flex-center mb-l">
+      <h4>Contact us</h4>
+      <p class="mb-m">Refshalevej 193, 1432 Copenhagen</p>
+      <p>info@nusnus.dk</p>
+    </div>
 
-  <div class="flex-col flex-center mb-l">
-    <h4>Contact us</h4>
-    <div class="flex-row gap-m">
-      <a href="">
-        <img src="../../public/icons/facebook-pink.svg" alt="Facebook ikon" />
-      </a>
-      <a href="">
-        <img src="../../public/icons/soundcloud-pink.svg" alt="Facebook ikon" />
-      </a>
-      <a href="">
-        <img src="../../public/icons/instagram-pink.svg" alt="Facebook ikon" />
-      </a>
+    <div class="flex-col flex-center mb-l">
+      <h4>Follow us</h4>
+      <div class="flex-row gap-m">
+        <a href="https://www.facebook.com/Karruselfestival">
+          <img src="../../public/icons/facebook-pink.svg" alt="Facebook ikon" />
+        </a>
+        <a href="https://on.soundcloud.com/pZ4aZX9xPWEj54818">
+          <img
+            src="../../public/icons/soundcloud-pink.svg"
+            alt="Soundcloud ikon"
+          />
+        </a>
+        <a href="https://www.instagram.com/karruselfest">
+          <img
+            src="../../public/icons/instagram-pink.svg"
+            alt="Instagram ikon"
+          />
+        </a>
+      </div>
     </div>
   </div>
 
-  <img
-    class="logo-style"
-    src="../../public/icons/logo.png"
-    alt="Karrusel logo"
-  />
+  <a class="pc-hide" href="/">
+    <img
+      class="logo-style"
+      src="../../public/icons/logo.png"
+      alt="Karrusel logo"
+    />
+  </a>
 </div>
 
 <style>
@@ -57,7 +73,9 @@
     }
   }
 
-  a {
+  a,
+  p {
+    font-size: 0.9rem;
     text-decoration: none;
   }
 
@@ -72,5 +90,25 @@
 
   .logo-style {
     width: 150px;
+  }
+
+  @media (min-width: 768px) {
+    .footer-container {
+      padding: var(--spacing-large);
+      flex-direction: row;
+      justify-content: space-between;
+
+      & div h4 {
+        margin-bottom: var(--spacing-large);
+      }
+    }
+
+    a {
+      margin-bottom: var(--spacing-medium);
+    }
+
+    .logo-style {
+      width: 200px;
+    }
   }
 </style>

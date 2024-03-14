@@ -26,6 +26,11 @@ main {
     margin: auto;
 }
 
+/* Show on pc only */
+.pc-only {
+    display: none;
+}
+
 /* Styling text */
 h1, h2, h3, h4, a {
     text-transform: uppercase;

@@ -1,0 +1,21 @@
+@media (min-width: 768px) {
+    /* Hide on pc view */
+    .pc-hide {
+        display: none;
+    }
+
+    .pc-only {
+        display: inline-block;
+    }
+
+    /* Pc styling flex and grid */
+    .pc-flex-col {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pc-flex-row {
+        display: flex;
+        flex-direction: row;
+    }
+}
