@@ -1,3 +1,14 @@
 ---
-
+const { buttonText } = Astro.props;
 ---
+
+<button>{buttonText}</button>
+
+<style>
+  button {
+    width: 150px;
+    height: 45px;
+    border: 3px solid var(--tertiary-color);
+    box-shadow: 0 0 10px var(--tertiary-color);
+  }
+</style>
