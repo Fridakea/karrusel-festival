@@ -1,16 +1,18 @@
 ---
 import MainLayout from "../layouts/Main-layout.astro";
 import OutlinedButton from "../components/Outlined-button.astro";
+import FilledButton from "../components/Filled-button.astro";
 const { title } = Astro.props;
 ---
 
 <MainLayout title="Side til at se vores komponenter">
   <p>Her kan vi indsætte vores komponenter hvis vi ønsker at se dem</p>
+  <FilledButton />
   <OutlinedButton />
 </MainLayout>
 
 <style>
   * {
-    margin-bottom: 25px;
+    margin: 25px;
   }
 </style>

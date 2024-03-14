@@ -1,3 +1,22 @@
 ---
-
+const { buttonText } = Astro.props;
 ---
+
+<button>klik her</button>
+
+<style>
+  button {
+    width: 150px;
+    height: 45px;
+    border: none;
+    background-color: var(--tertiary-color);
+    box-shadow: 0 0 10px var(--tertiary-color);
+    text-transform: uppercase;
+  }
+
+  button:hover {
+    text-decoration: underline;
+    background-color: var(--tertiary-shade-color);
+    box-shadow: 0 0 10px var(--tertiary-shade-color);
+  }
+</style>
