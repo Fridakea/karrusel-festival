@@ -2,26 +2,29 @@
 
 ---
 
-<div>
-  get ticket - get ticket - get ticket - get ticket - get ticket - get ticket -
-  get ticket - get ticket
-</div>
+<a href="/tickets">
+  <marquee>
+    get ticket - get ticket - get ticket - get ticket - get ticket - get ticket
+    - get ticket - get ticket
+  </marquee>
+</a>
 
 <style>
-  div {
+  marquee {
     height: 150px;
     width: 100%;
     padding: 75px 0;
     line-height: 10%;
     white-space: nowrap;
     overflow: hidden;
+    cursor: pointer;
 
     text-transform: uppercase;
     font-size: 4rem;
     color: var(--tertiary-color);
   }
 
-  div:hover {
+  marquee:hover {
     color: var(--tertiary-shade-color);
   }
 </style>
