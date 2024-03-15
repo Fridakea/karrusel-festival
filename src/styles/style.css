@@ -122,3 +122,54 @@ button {
 .logo-style:hover {
     stroke: var(--secondary-shade-color);
 }
+
+/* Styling tiltet signup button for newsletter signup */
+.signup-button path {
+    stroke: var(--tertiary-color);
+    transition: 0.2s ease-in-out;
+}
+
+.tiltet-button {
+    border: none;
+    padding: none;
+    position: absolute;
+    left: 163px;
+    top: 1px;
+    z-index: 1;
+
+    & span {
+      position: absolute;
+      left: 57px;
+      top: 12px;
+    }
+  }
+
+.tiltet-button:hover {
+    & .signup-button{
+        & path {
+            stroke: var(--tertiary-shade-color);
+        }
+    }
+
+    & span {
+        text-decoration: underline;
+    }
+}
+
+/* Styling the form and indput connected to the signup to newsletter form */
+form {
+    position: relative;
+  }
+
+  .newsletter-input {
+    width: 350px;
+    padding: 12px;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    position: relative;
+    z-index: 0;
+  }
+
+  .newsletter-input:focus-visible {
+    outline: 0;
+  }
