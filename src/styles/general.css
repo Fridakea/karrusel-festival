@@ -1,0 +1,109 @@
+/* Imported fonts */
+@import url(https://db.onlinewebfonts.com/c/5d17ee572e2e5767eba7a20b2ca8bd40?family=Chevalier+LP+W00+Regular);
+
+/* Variables */
+:root {
+    --primary-color: #212121;
+    --secondary-color: #E55DF5;
+    --secondary-shade-color: #8C1692;
+    --tertiary-color: #3ED0FF;
+    --tertiary-shade-color: #0076A7;
+
+    --text-color: #ffffff;
+    --text-shade-color: #EDEDED;
+
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Show on pc only */
+.pc-only {
+    display: none;
+}
+
+/* Styling text */
+h1, h2, h3, h4, a {
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-top: var(--spacing-large);
+    margin-bottom: var(--spacing-large);
+    text-align: center;
+    font-family: "Chevalier LP W00 Regular";
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-medium);
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-small);
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-small);
+}
+
+a {
+    margin-bottom: var(--spacing-small);
+}
+
+/* General styling with flex and grid */
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.gap-s {
+    gap: var(--spacing-small);
+}
+
+.gap-m {
+    gap: var(--spacing-medium);
+}
+
+.gap-l {
+    gap: var(--spacing-large);
+}
+
+/* General classnames for spacing */
+.mb-s {
+    margin-bottom: var(--spacing-small);
+}
+
+.mb-m {
+    margin-bottom: var(--spacing-medium);
+}
+
+.mb-l {
+    margin-bottom: var(--spacing-large);
+}
