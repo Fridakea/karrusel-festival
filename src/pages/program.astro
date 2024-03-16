@@ -1,13 +1,88 @@
 ---
 import MainLayout from "../layouts/Main-layout.astro";
 import Footer from "../components/Footer.astro";
-const { title } = Astro.props;
+import ArtistCard from "../components/Artist-card.astro";
+import Ticketbanner from "../components/Ticketbanner.astro";
+const { title, className } = Astro.props;
 ---
 
 <MainLayout title="PROGRAM">
   <main>
     <h1>Program 2024</h1>
+    <div class="flex-row gap-l flex-align-center mb-l">
+      <h2>Thursday</h2>
+      <hr />
+    </div>
 
-    <Footer />
+    <div class="uneven-grid">
+      <ArtistCard />
+      <ArtistCard className="mt-l" />
+      <ArtistCard />
+      <ArtistCard className="mt-xl" />
+      <ArtistCard />
+      <ArtistCard className="mt-l" />
+      <ArtistCard />
+      <ArtistCard className="mt-xl" />
+    </div>
+
+    <div class="flex-row gap-l flex-align-center mb-l">
+      <h2>Friday</h2>
+      <hr />
+    </div>
+
+    <div class="uneven-grid">
+      <ArtistCard />
+      <ArtistCard className="mt-l" />
+      <ArtistCard />
+      <ArtistCard className="mt-xl" />
+      <ArtistCard />
+      <ArtistCard className="mt-l" />
+      <ArtistCard />
+      <ArtistCard className="mt-xl" />
+    </div>
+
+    <div class="flex-row gap-l flex-align-center mb-l">
+      <h2>Saturday</h2>
+      <hr />
+    </div>
+
+    <div class="uneven-grid">
+      <ArtistCard />
+      <ArtistCard className="mt-l" />
+      <ArtistCard />
+      <ArtistCard className="mt-xl" />
+      <ArtistCard />
+      <ArtistCard className="mt-l" />
+      <ArtistCard />
+      <ArtistCard className="mt-xl" />
+    </div>
+
+    <Ticketbanner />
   </main>
+  <Footer />
 </MainLayout>
+
+<style>
+  .uneven-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    column-gap: var(--spacing-xlarge);
+    row-gap: 2px;
+    margin-bottom: var(--spacing-large);
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  hr {
+    height: 1px;
+    width: 90%;
+  }
+
+  @media (min-width: 768px) {
+    .uneven-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+</style>

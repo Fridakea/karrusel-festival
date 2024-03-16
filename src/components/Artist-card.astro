@@ -1,3 +1,35 @@
 ---
-
+import { Image } from "astro:assets";
+import acidPauli from "../../public/artister/acidpauli.jpeg";
+const { className } = Astro.props;
 ---
+
+<a class={className} href="/artist-single-view">
+  <Image src={acidPauli} alt="Billede af Acid Pauli" />
+  <h3>Acid Pauli</h3>
+</a>
+
+<style>
+  a {
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 1px solid var(--text-color);
+  }
+  h3 {
+    text-align: center;
+  }
+
+  a:hover {
+    transform: scale(1.05);
+    & img {
+      box-shadow: 0 0 25px var(--tertiary-shade-color);
+    }
+  }
+</style>

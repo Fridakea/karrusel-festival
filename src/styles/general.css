@@ -12,9 +12,10 @@
     --text-color: #ffffff;
     --text-shade-color: #EDEDED;
 
-    --spacing-small: 8px;
-    --spacing-medium: 16px;
-    --spacing-large: 24px;
+    --spacing-small: 16px;
+    --spacing-medium: 24px;
+    --spacing-large: 32px;
+    --spacing-xlarge: 48px;
 }
 
 * {
@@ -27,6 +28,7 @@
 
 main {
     max-width: 1200px;
+    padding: var(--spacing-small);
     margin: auto;
 }
 
@@ -83,6 +85,10 @@ a {
     align-items: center;
 }
 
+.flex-align-center {
+    align-items: center;
+}
+
 .gap-s {
     gap: var(--spacing-small);
 }
@@ -106,4 +112,24 @@ a {
 
 .mb-l {
     margin-bottom: var(--spacing-large);
+}
+
+.mb-xl {
+    margin-bottom: var(--spacing-xlarge);
+}
+
+.mt-s {
+    margin-top: var(--spacing-small);
+}
+
+.mt-m {
+    margin-top: var(--spacing-medium);
+}
+
+.mt-l {
+    margin-top: var(--spacing-large);
+}
+
+.mt-xl {
+    margin-top: var(--spacing-xlarge);
 }

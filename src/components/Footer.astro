@@ -6,6 +6,8 @@ import Logo from "../components/icons/Logo.astro";
 import SignupButton from "../components/buttons/Signup-button.astro";
 ---
 
+<hr />
+
 <footer>
   <div class="flex-col flex-center mb-l">
     <h4>shortcuts</h4>
@@ -61,6 +63,9 @@ import SignupButton from "../components/buttons/Signup-button.astro";
 
 <style>
   footer {
+    max-width: 1200px;
+    margin: auto;
+    padding-top: var(--spacing-large);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,7 +93,7 @@ import SignupButton from "../components/buttons/Signup-button.astro";
 
   @media (min-width: 768px) {
     footer {
-      padding: var(--spacing-large);
+      padding: var(--spacing-large) var(--spacing-large) 0 var(--spacing-large);
       flex-direction: row;
       justify-content: space-between;
 
