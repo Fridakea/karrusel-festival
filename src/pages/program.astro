@@ -4,6 +4,18 @@ import Footer from "../components/Footer.astro";
 import ArtistCard from "../components/Artist-card.astro";
 import Ticketbanner from "../components/Ticketbanner.astro";
 const { title, className } = Astro.props;
+
+const artist = await fetch("https://fmhjnrarhnsjaffenfhg.supabase.co", {
+  method: "GET",
+  headers: {
+    apikey:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtaGpucmFyaG5zamFmZmVuZmhnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MTIyNDEsImV4cCI6MjAyNTk4ODI0MX0.pWJ54xSfP_rmLrSXXLnJ-dmpaAK1IgomGXE6UgCDcfU",
+  },
+}).then((response) => {
+  return response.json();
+});
+
+console.log("artist", artist);
 ---
 
 <MainLayout title="PROGRAM">
