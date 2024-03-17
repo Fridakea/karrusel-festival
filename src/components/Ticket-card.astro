@@ -1,21 +1,26 @@
 ---
 import OutlinedButton from "../components/buttons/Outlined-button.astro";
 import FilledButton from "../components/buttons/Filled-button.astro";
+const { buttonText } = Astro.props;
 ---
 
 <div class="ticket_frame">
+
     <div class="ticket_top">
     <h3>KARRUSEL FESTIVAL</h3>
     <h2>EARLY BIRD PARTOUT</h2>
     </div>
-    <img src="../public/svgticket/billet.svg" alt="billede af lyserød billet">
+
+    <img src="../public/svgticket/billet.svg" alt="billede af lyserød billet" class="svg_billet">
+
     <div class="ticket_info">
     <h3>22 - 24 AUGUST 2024</h3>
     <h3>COPENHAGEN, DENMARK</h3>
     <h3>800 DKK</h3>
     </div>
+
     <div class="ticket_button_wrapper">
-    <FilledButton buttonText = "BUY NOW"/>
+    <FilledButton {buttonText} = "BUY NOW"/>
     <OutlinedButton />
     </div>
 </div>
@@ -28,12 +33,27 @@ import FilledButton from "../components/buttons/Filled-button.astro";
         align-items: center;
     }
 
+    .ticket_top {
+        background: transparent;
+        gap: 8px;
+    }
+
     .ticket_frame {
         width: 100%;
+        height: auto;
+        /*border: 2px solid #F3B3FA;*/
+        border: 4px solid rgba(243, 179, 250, .1);
+        background: linear-gradient(0deg, rgba(16, 16, 16, 0.54) 0%, rgba(16, 16, 16, 0.54) 100%), url(<path-to-image>) lightgray 50% / cover no-repeat, linear-gradient(248deg, rgba(229, 93, 245, 0.15) 1.52%, rgba(255, 255, 255, 0.00) 96.99%);
+        box-shadow: 0.605px 0.605px 30.256px 0px rgba(66, 66, 66, 0.10) inset, -0.605px -0.605px 30.256px 0px rgba(255, 255, 255, 0.10) inset;
+        backdrop-filter: blur(7.5640034675598145px);
+        padding: 32px 0;
+        margin-top: 4rem;
+        gap: 1rem;
     }
 
     .ticket_info {
-        margin: 32px 0;
+        margin: 16px 0;
+        gap: 4px;
     }
 
     .ticket_button_wrapper {
@@ -41,6 +61,58 @@ import FilledButton from "../components/buttons/Filled-button.astro";
         flex-direction: column;
         gap: 8px;
         width: 100%;
+        background: transparent;
     }
+
+    h1 {
+        text-align: center;
+        background: transparent;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: clamp(2rem, 8vw ,3.5rem);
+        background: transparent;
+    }
+    h3 {
+        font-size: 14px;
+        background: transparent;
+        opacity: .7;
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    .svg_billet {
+        background: transparent;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+
+    h3 {
+        font-size: 16px;
+    margin-bottom: 4px;
+
+    }
+
+    .ticket_frame {
+    gap: 1rem;
+    }
+    .ticket_button_wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+    }
+
+    .ticket_info {
+        margin: 32px 0;
+        gap: 4px;
+    }
+
+  }
 
 </style>
