@@ -1,0 +1,43 @@
+---
+const { topic, text, statusOpen, statusClosed } = Astro.props;
+---
+
+<div class="faq-row">
+    <div class="text_col">
+        <h4>{topic}</h4>
+        {statusOpen && <img src="../public/icons/luk_ikon.svg" alt="kryds ikon" class="faq_icon">}
+        {statusClosed && <img src="../public/icons/aaben_ikon.svg" alt="plus ikon" class="faq_icon">}
+    </div>
+    <p class="faq_text">{text}</p>
+
+</div>
+
+<style>
+    .text_col {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1.5rem 0 8px 0;
+
+    }
+
+    .faq_icon {
+        height: 32px;
+        width: 32px;
+    }
+
+    .faq_text {
+        margin-bottom: 24px;
+        opacity: .7;
+    }
+
+    @media (min-width: 768px) {
+
+        .faq_icon {
+        height: 32px;
+        width: 32px;
+    }
+
+}
+
+</style>
