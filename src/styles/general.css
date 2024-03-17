@@ -1,5 +1,12 @@
 /* Imported fonts */
-@import url(https://db.onlinewebfonts.com/c/5d17ee572e2e5767eba7a20b2ca8bd40?family=Chevalier+LP+W00+Regular);
+@import url('https://db.onlinewebfonts.com/c/5d17ee572e2e5767eba7a20b2ca8bd40?family=Chevalier+LP+W00+Regular');
+
+@font-face {
+    font-family: 'Andale Mono Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Andale Mono Regular'), url('ANDALEMO.woff') format('woff');
+}
 
 /* Variables */
 :root {
@@ -24,11 +31,13 @@
     box-sizing: border-box;
     background-color: var(--primary-color);
     color: var(--text-color);
+    font-family: "Andale Mono Regular", sans-serif;
+    line-height: 1.25;
 }
 
 main {
     max-width: 1200px;
-    padding: var(--spacing-small);
+    padding: var(--spacing-medium);
     margin: auto;
 }
 
@@ -38,7 +47,7 @@ main {
 }
 
 /* Styling text */
-h1, h2, h3, h4, a {
+h1, h2, h3, a {
     text-transform: uppercase;
 }
 
@@ -47,7 +56,7 @@ h1 {
     margin-top: var(--spacing-large);
     margin-bottom: var(--spacing-large);
     text-align: center;
-    font-family: "Chevalier LP W00 Regular";
+    font-family: "Chevalier LP W00 Regular", serif;
 }
 
 h2 {
