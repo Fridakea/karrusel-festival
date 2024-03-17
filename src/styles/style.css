@@ -5,11 +5,13 @@ button {
 
 /* Styling icons and their hover effect */
 .icon-style {
+    stroke: var(--secondary-color);
     fill: var(--secondary-color);
     transition: 0.2s ease-in-out;
 }
 
 .icon-style:hover {
+    stroke: var(--secondary-shade-color);
     fill: var(--secondary-shade-color);
 }
 
@@ -17,10 +19,19 @@ button {
 .logo-style {
     stroke: var(--secondary-color);
     transition: 0.2s ease-in-out;
+
+    & .st0, .st2 {
+        fill: var(--secondary-color);
+        transition: 0.2s ease-in-out;
+    }
 }
 
 .logo-style:hover {
     stroke: var(--secondary-shade-color);
+
+    & .st0, .st2 {
+        fill: var(--secondary-shade-color);
+    }
 }
 
 /* Styling tiltet signup button for newsletter signup */
