@@ -1,0 +1,15 @@
+---
+import MainLayout from "../layouts/Main-layout.astro";
+import Footer from "../components/Footer.astro";
+import TicketCard from "../components/Ticket-card.astro";
+const { title } = Astro.props;
+---
+
+<MainLayout title="Tickets">
+    <main>
+        <h1>Tickets</h1>
+        <TicketCard />
+
+    </main>
+</MainLayout>
+

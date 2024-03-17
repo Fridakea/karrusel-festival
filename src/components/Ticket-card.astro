@@ -1,0 +1,46 @@
+---
+import OutlinedButton from "../components/buttons/Outlined-button.astro";
+import FilledButton from "../components/buttons/Filled-button.astro";
+---
+
+<div class="ticket_frame">
+    <div class="ticket_top">
+    <h3>KARRUSEL FESTIVAL</h3>
+    <h2>EARLY BIRD PARTOUT</h2>
+    </div>
+    <img src="../public/svgticket/billet.svg" alt="billede af lyserød billet">
+    <div class="ticket_info">
+    <h3>22 - 24 AUGUST 2024</h3>
+    <h3>COPENHAGEN, DENMARK</h3>
+    <h3>800 DKK</h3>
+    </div>
+    <div class="ticket_button_wrapper">
+    <FilledButton buttonText = "BUY NOW"/>
+    <OutlinedButton />
+    </div>
+</div>
+
+<style>
+    .ticket_frame, .ticket_top, .ticket_info, .ticket_button_wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ticket_frame {
+        width: 100%;
+    }
+
+    .ticket_info {
+        margin: 32px 0;
+    }
+
+    .ticket_button_wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+
+</style>
