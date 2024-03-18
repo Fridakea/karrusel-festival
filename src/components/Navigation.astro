@@ -1,0 +1,38 @@
+---
+import "../styles/general.css";
+import "../styles/style.css";
+import "../styles/pc-style.css";
+---
+
+<div class="sidebar" id="minSidebar">
+    <a href="javascript:void(0)" class="closebtn" id="closebtn_id" onclick="closeNav()">&times;</a>
+    <a href="../pages/tickets.astro" class="sidebar_button">Tickets</a>
+    <a href="" class="sidebar_button">Program</a>
+    <a href="../pages/tickets.astro" class="sidebar_button">Practical Info</a>
+    <a href="" class="sidebar_button">About</a>
+</div>
+
+<header>
+    <nav>
+        <div class="logo_link">
+            <a href="index.html">
+                <img src="../components/icons/Logo.astro" alt="" class="nav_icon">
+            </a>
+        </div>
+        <div class="nav_links">
+            <a href="/">Tickets</a>
+            <a href="/">Program</a>
+            <a href="/">Practical Info</a>
+            <a href="/">About</a>
+        </div>
+
+        <span class="burger_button" onclick="openNav()">
+            <img src="icons/burger.svg" alt="" class="nav_burger"></span>
+
+    </nav>
+</header>
+
+<style>
+
+
+</style>

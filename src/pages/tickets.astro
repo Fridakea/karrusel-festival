@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../layouts/Main-layout.astro";
+import NavigationMenu from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import TicketCard from "../components/Ticket-card.astro";
 import Line from "../components/Line.astro";
@@ -8,6 +9,7 @@ const { title } = Astro.props;
 ---
 
 <MainLayout title="Tickets">
+    <NavigationMenu />
     <main class="tickets_wrapper">
         <h1>FULL FESTIVAL PASS</h1>
         <h4>COPENHAGEN</h4>
