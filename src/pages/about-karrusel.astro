@@ -1,11 +1,15 @@
 ---
 import MainLayout from "../layouts/Main-layout.astro";
+import NavigationMenu from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import Ticketbanner from "../components/Ticketbanner.astro";
 import "../components/Navigation.astro";
-
-// import Artists_loop from "../components/Artists_loop.astro";
+import FacebookIcon from "../components/icons/Facebook-icon.astro";
+import InstagramIcon from "../components/icons/Instagram-icon.astro";
+import SoundcloudIcon from "../components/icons/Soundcloud-icon.astro";
 const { title, className } = Astro.props;
+// import Artists_loop from "../components/Artists_loop.astro";
+
 // const data = await fetch("https://fmhjnrarhnsjaffenfhg.supabase.co/rest/v1/karrusel_redesign", {
 //   method: "GET",
 //   headers: {
@@ -17,6 +21,7 @@ const { title, className } = Astro.props;
 
 <!-- https://fmhjnrarhnsjaffenfhg.supabase.co --><!-- eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtaGpucmFyaG5zamFmZmVuZmhnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MTIyNDEsImV4cCI6MjAyNTk4ODI0MX0.pWJ54xSfP_rmLrSXXLnJ-dmpaAK1IgomGXE6UgCDcfU -->
 <MainLayout title="ABOUT KARRUSEL">
+  <NavigationMenu />
   <main>
     <h1>ABOUT KARRUSEL</h1>
     <div class="about-hero"></div>
@@ -67,11 +72,42 @@ const { title, className } = Astro.props;
             <p>Location: Refshalevej 193, 1432 Copenhagen.<br />Karrusel is organized by Nus Nus</p>
             <p>Contact us on email: info@nusnus.dk</p>
             <p>Follow us on social media:</p>
-            <div class="about_SoMe"></div>
+            <div class="about_SoMe">
+              <a href="https://www.facebook.com/Karruselfestival" target="_blank" rel="noopener noreferrer">
+                <FacebookIcon />
+              </a>
+              <a href="https://www.instagram.com/karruselfest" target="_blank" rel="noopener noreferrer">
+                <InstagramIcon />
+              </a>
+              <a href="https://on.soundcloud.com/pZ4aZX9xPWEj54818" target="_blank" rel="noopener noreferrer">
+                <SoundcloudIcon />
+              </a>
+            </div>
           </article>
         </div>
       </div>
     </div>
+    <section class="aboutgallery">
+      <h2>IMAGE GALLERY</h2>
+      <div class="image-grid">
+        <a href="https://www.karrusel.dk/#/gallery-2023/"><img src="../artister/aboutFJAAKwide.jpg" alt="Wide Image 1" /></a>
+        <a href="https://www.karrusel.dk/#/gallery-2022/"><img src="../artister/about_Mantas-Hesthaven_wide.jpeg" alt="Wide Image 2" /></a>
+        <a href="https://www.karrusel.dk/#/gallery-2023/"><img src="../artister/aboutElena+Perota_tall.jpeg" alt="Tall Image 1" /></a>
+        <a href="https://www.karrusel.dk/#/gallery-2022/"><img src="../artister/aboutPaula+Hincenberga_tall.jpeg" alt="Tall Image 2" /></a>
+
+        <a href="https://www.karrusel.dk/#/gallery-2021/"><img src="../artister/about_Gabriel+Miranda_tall.jpeg" alt="Tall Image 3" /></a>
+        <a href="https://www.karrusel.dk/#/gallery-2021/"><img src="../artister/about40_Mantas-Hesthaven_wide.jpeg" alt="Wide Image 3" /></a>
+      </div>
+    </section>
+    <section class="about_videos">
+      <h2>VIDEOS</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/watch?v=w5XwDzNwiSk&t=1s" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/watch?v=XHG-7BhHRSM&t=1s" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
     <hr />
     <Ticketbanner />
   </main>
@@ -84,22 +120,15 @@ const { title, className } = Astro.props;
     justify-content: center; /* Center the background image horizontally */
     align-items: center; /* Center the background image vertically */
     height: 300px; /* Set a default height for the hero section */
-    background-image: url("../public/artister/haai_about_hero.png");
+    background-image: url("../artister/haai_about_hero.png");
     background-size: cover; /* Cover the entire area */
     background-position: center; /* Center the background image */
   }
 
   @media (min-width: 768px) {
     .about-hero {
-      height: 400px; /* Adjust height for larger screens */
+      height: 600px; /* Adjust height for larger screens */
     }
-  }
-  .uneven-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
-    column-gap: var(--spacing-xlarge);
-    row-gap: 2px;
-    margin-bottom: var(--spacing-large);
   }
 
   h2 {
@@ -124,7 +153,7 @@ const { title, className } = Astro.props;
   }
   .artikler {
     width: 100%;
-    border: 1px solid white; /* Add white border around articles */
+    border: 0.5px solid white; /* Add white border around articles */
     padding: 20px; /* Add padding to articles */
   }
   .aboutwrapper {
@@ -132,9 +161,16 @@ const { title, className } = Astro.props;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 100px;
+    margin-bottom: 40px;
+  }
+  .aboutgallery {
+    margin-top: 140px;
   }
 
   @media (max-width: 767px) {
+    .aboutwrapper {
+      grid-template-columns: 1fr;
+    }
     /* For screens smaller than 768px (mobile), display articles in a single column */
     .artikler {
       width: 100%; /* Ensure articles take full width */
@@ -148,9 +184,71 @@ const { title, className } = Astro.props;
       margin-right: 20px; /* Add right margin for spacing between columns */
       float: left; /* Float articles to left for two-column layout */
     }
+  }
+  .about_SoMe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .artikler:nth-child(2n) {
-      margin-right: 0; /* Remove margin for last article in each row */
+  .about_SoMe a {
+    margin: 0 12px; /* Adjust the margin to add more space between icons */
+  }
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; /* Adjust the gap between images */
+  }
+
+  .image-grid a {
+    display: block;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .image-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .image-grid a:nth-child(1),
+  .image-grid a:nth-child(2) {
+    grid-row: span 2; /* Make the first two images span two rows */
+  }
+
+  .image-grid a:nth-child(n + 3) {
+    grid-row: span 4; /* Make the next images span four rows */
+  }
+
+  .image-grid a:hover img {
+    transform: scale(1.05); /* Increase image size on hover */
+  }
+
+  .about_videos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .video-container {
+    flex: 1;
+    margin-right: 10px; /* Adjust spacing between videos */
+  }
+
+  .video-container:last-child {
+    margin-right: 0; /* Remove right margin for the last video container */
+  }
+
+  .video-container iframe {
+    width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .video-container {
+      flex: 0 0 100%; /* Ensure each video takes up full width on mobile */
+      margin-right: 0; /* Reset margin */
+      margin-bottom: 20px; /* Add spacing between videos on mobile */
     }
   }
 </style>
