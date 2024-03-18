@@ -4,13 +4,13 @@ import Footer from "../components/Footer.astro";
 import Ticketbanner from "../components/Ticketbanner.astro";
 import Artists_loop from "../components/Artists_loop.astro";
 const { title, className } = Astro.props;
-const data = await fetch("https://fmhjnrarhnsjaffenfhg.supabase.co/rest/v1/karrusel_redesign", {
-  method: "GET",
-  headers: {
-    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtaGpucmFyaG5zamFmZmVuZmhnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MTIyNDEsImV4cCI6MjAyNTk4ODI0MX0.pWJ54xSfP_rmLrSXXLnJ-dmpaAK1IgomGXE6UgCDcfU",
-  },
-}).then((res) => res.json());
-console.log(data);
+// const data = await fetch("https://fmhjnrarhnsjaffenfhg.supabase.co/rest/v1/karrusel_redesign", {
+//   method: "GET",
+//   headers: {
+//     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtaGpucmFyaG5zamFmZmVuZmhnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MTIyNDEsImV4cCI6MjAyNTk4ODI0MX0.pWJ54xSfP_rmLrSXXLnJ-dmpaAK1IgomGXE6UgCDcfU",
+//   },
+// }).then((res) => res.json());
+// console.log(data);
 ---
 
 <!-- https://fmhjnrarhnsjaffenfhg.supabase.co --><!-- eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtaGpucmFyaG5zamFmZmVuZmhnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MTIyNDEsImV4cCI6MjAyNTk4ODI0MX0.pWJ54xSfP_rmLrSXXLnJ-dmpaAK1IgomGXE6UgCDcfU -->
@@ -18,13 +18,13 @@ console.log(data);
   <main>
     <h1>ABOUT KARRUSEL</h1>
     <div class="about-hero"></div>
-    <section class="artist">
+    <!-- <section class="artist">
       {
         data.map((show) => {
           return <Artists_loop data={show} />;
         })
       }
-    </section>
+    </section> -->
 
     <div class="artikler" <article>
       <h3>THE EXPERIENCE</h3>
@@ -35,8 +35,6 @@ console.log(data);
   </main>
   <Footer />
 </MainLayout>
-
-https://fmhjnrarhnsjaffenfhg.supabase.co/rest/v1/karrusel_redesign eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtaGpucmFyaG5zamFmZmVuZmhnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MTIyNDEsImV4cCI6MjAyNTk4ODI0MX0.pWJ54xSfP_rmLrSXXLnJ-dmpaAK1IgomGXE6UgCDcfU
 
 <style>
   .about-hero {
