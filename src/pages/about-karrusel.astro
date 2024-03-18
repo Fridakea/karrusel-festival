@@ -2,7 +2,8 @@
 import MainLayout from "../layouts/Main-layout.astro";
 import Footer from "../components/Footer.astro";
 import Ticketbanner from "../components/Ticketbanner.astro";
-import Artists_loop from "../components/Artists_loop.astro";
+import "../components/Navigation.astro";
+// import Artists_loop from "../components/Artists_loop.astro";
 const { title, className } = Astro.props;
 // const data = await fetch("https://fmhjnrarhnsjaffenfhg.supabase.co/rest/v1/karrusel_redesign", {
 //   method: "GET",
@@ -25,11 +26,50 @@ const { title, className } = Astro.props;
         })
       }
     </section> -->
+    <div class="aboutwrapper">
+      <div class="aboutcontainer1">
+        <div class="artikler">
+          <article>
+            <h2>THE EXPERIENCE</h2>
+            <p>Karrusel believes in the right to a harassment-free festival experience. We believe in the right of everyone to express themselves. Karrusel welcomes everybody – all with their different orientations, experiences, histories and backgrounds. Karrusel only exists if everyone takes care of each other, respects their own and others boundaries, embraces diversity and acts as a part of the community.</p>
+            <p>If you feel unsafe, please reach out to our awareness team. They will be wearing a pink vests and walk around the site and be at their base (see on this map).</p>
+            <p>Ask any festival staff and they will guide you to the them.</p>
+            <p>Take responsibility for your own actions.</p>
+            <p>Respect your own and others boundaries.</p>
+            <p>Speak up rather than look the other way.</p>
+          </article>
+        </div>
 
-    <div class="artikler" <article>
-      <h3>THE EXPERIENCE</h3>
+        <div class="artikler">
+          <article>
+            <h2>THE HISTORY</h2>
+            <p>2024 marks the 5th edition of Karrusel. Karrusel is a circus themed rave presenting some of the world's leading electronic artists.</p>
+            <p>Past editions include performances by Acid Pauli, Amelie Lens, Dixon, FJAAK, Folamour, Hunee, Job Jobse, Kölsch, Mall Grab, Nastia, Partiboi69, Peggy Gou, Richie Hawtin, Skin On Skin, The Blessed Madonna, Victor Ruiz and VTSS.</p>
+            <p>The festival is open air and takes place on secluded green spot at the abandoned shipyard of Refshaleøen in central Copenhagen.</p>
+          </article>
+        </div>
+      </div>
+      <div class="aboutcontainer2">
+        <div class="artikler">
+          <article>
+            <h2>SUSTAINABILITY</h2>
+            <p>Karrusel is committed to becoming more sustainable. In order to save resources and reduce waste we use left over materials and timber for stage designs and installations.</p>
+            <p>We will re-use production and print materials when possible year after year. Beverages are served in reusable or sustainable materials. Straws are not being used.</p>
+            <p>How you can help: Take a bike or public transport to the festival. Don’t bring confetti or glitter to the festival.</p>
+            <p>There will be free tap water stations during the festival. Please bring an empty cup or bottle and drink nice free tap water.</p>
+          </article>
+        </div>
+
+        <div class="artikler">
+          <article>
+            <h2>CONTACT & LOCATION</h2>
+            <p>Location: Refshalevej 193, 1432 Copenhagen.<br />Karrusel is organized by Nus Nus</p>
+            <p>Contact us on email: info@nusnus.dk</p>
+            <p>Follow us on social media:</p>
+          </article>
+        </div>
+      </div>
     </div>
-
     <hr />
     <Ticketbanner />
   </main>
@@ -67,5 +107,48 @@ const { title, className } = Astro.props;
   hr {
     height: 1px;
     width: 100%;
+  }
+  .aboutcontainer1,
+  .aboutcontainer2 {
+    display: flex;
+    flex-direction: column;
+    gap: 110px;
+  }
+  .aboutcontainer2 {
+    margin-top: 40px;
+  }
+  article {
+    width: 100%;
+  }
+  .artikler {
+    width: 100%;
+    border: 1px solid white; /* Add white border around articles */
+    padding: 20px; /* Add padding to articles */
+  }
+  .aboutwrapper {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+  }
+
+  @media (max-width: 767px) {
+    /* For screens smaller than 768px (mobile), display articles in a single column */
+    .artikler {
+      width: 100%; /* Ensure articles take full width */
+      box-sizing: border-box; /* Include padding and border in the width calculation */
+    }
+  }
+
+  @media (min-width: 768px) {
+    /* For screens 768px and larger (desktop), display articles in two columns */
+    .artikler {
+      margin-right: 20px; /* Add right margin for spacing between columns */
+      float: left; /* Float articles to left for two-column layout */
+    }
+
+    .artikler:nth-child(2n) {
+      margin-right: 0; /* Remove margin for last article in each row */
+    }
   }
 </style>
