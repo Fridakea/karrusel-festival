@@ -46,7 +46,7 @@ const { buttonText } = Astro.props;
         background: linear-gradient(0deg, rgba(16, 16, 16, 0.54) 0%, rgba(16, 16, 16, 0.54) 100%), url(<path-to-image>) lightgray 50% / cover no-repeat, linear-gradient(248deg, rgba(229, 93, 245, 0.15) 1.52%, rgba(255, 255, 255, 0.00) 96.99%);
         box-shadow: 0.605px 0.605px 30.256px 0px rgba(66, 66, 66, 0.10) inset, -0.605px -0.605px 30.256px 0px rgba(255, 255, 255, 0.10) inset;
         backdrop-filter: blur(7.5640034675598145px);
-        padding: 32px 0;
+        padding: 32px 4px;
         margin-top: 4rem;
         gap: 1rem;
     }
@@ -73,6 +73,7 @@ const { buttonText } = Astro.props;
         text-align: center;
         font-size: clamp(2rem, 8vw ,3.5rem);
         background: transparent;
+        margin-bottom: 0;
     }
     h3 {
         font-size: 14px;
