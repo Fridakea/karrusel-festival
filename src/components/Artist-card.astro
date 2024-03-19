@@ -1,12 +1,16 @@
 ---
-import { Image } from "astro:assets";
-import acidPauli from "../../public/artister/acidpauli.jpeg";
-const { className } = Astro.props;
+const { className, data, gridIndex = 0 } = Astro.props;
+
+let margin = "";
+if (gridIndex % 2 === 1) margin = "mt-xl"; // Every second element gets mt-xl
+if (gridIndex % 4 === 1) margin = "mt-l"; // Every 4th element overrides to mt-l
+
+const imgPath = `../../public/artister/${data?.Image}`;
 ---
 
-<a class={className} href="/artist-single-view">
-  <Image src={acidPauli} alt="Billede af Acid Pauli" />
-  <h3>Acid Pauli</h3>
+<a class={`${className} ${margin}`} href=`/artist-single-view/${data?.slug}`>
+  <img src={imgPath} alt=`Billede af ${data?.Artist ?? "Kunstner"}` />
+  <h3>{data?.Artist ?? "Ukendt"}</h3>
 </a>
 
 <style>

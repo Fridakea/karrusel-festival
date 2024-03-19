@@ -5,7 +5,11 @@ import Footer from "../components/Footer.astro";
 import ArtistCard from "../components/Artist-card.astro";
 import Ticketbanner from "../components/Ticketbanner.astro";
 
-const artist = await fetch(
+const thursday2024 = "2024-08-23";
+const friday2024 = "2024-08-24";
+const saturday2024 = "2024-08-25";
+
+const artists = await fetch(
   "https://fmhjnrarhnsjaffenfhg.supabase.co/rest/v1/karrusel_redesign",
   {
     method: "GET",
@@ -18,10 +22,10 @@ const artist = await fetch(
   return response.json();
 });
 
-console.log("artist", artist);
+console.log("artist", artists);
 ---
 
-<MainLayout title="PROGRAM">
+<MainLayout title="Program">
   <Navigation />
 
   <main>
@@ -32,14 +36,11 @@ console.log("artist", artist);
     </div>
 
     <div class="uneven-grid">
-      <ArtistCard />
-      <ArtistCard className="mt-l" />
-      <ArtistCard />
-      <ArtistCard className="mt-xl" />
-      <ArtistCard />
-      <ArtistCard className="mt-l" />
-      <ArtistCard />
-      <ArtistCard className="mt-xl" />
+      {
+        artists
+          .filter((item) => item?.["Playing Date"] === thursday2024)
+          .map((item, i) => <ArtistCard data={item} gridIndex={i} />)
+      }
     </div>
 
     <div class="flex-row gap-l flex-align-center mb-l">
@@ -48,30 +49,11 @@ console.log("artist", artist);
     </div>
 
     <div class="uneven-grid">
-      <ArtistCard />
-      <ArtistCard className="mt-l" />
-      <ArtistCard />
-      <ArtistCard className="mt-xl" />
-      <ArtistCard />
-      <ArtistCard className="mt-l" />
-      <ArtistCard />
-      <ArtistCard className="mt-xl" />
-    </div>
-
-    <div class="flex-row gap-l flex-align-center mb-l">
-      <h2>Saturday</h2>
-      <hr />
-    </div>
-
-    <div class="uneven-grid">
-      <ArtistCard />
-      <ArtistCard className="mt-l" />
-      <ArtistCard />
-      <ArtistCard className="mt-xl" />
-      <ArtistCard />
-      <ArtistCard className="mt-l" />
-      <ArtistCard />
-      <ArtistCard className="mt-xl" />
+      {
+        artists
+          .filter((item) => item?.["Playing Date"] === friday2024)
+          .map((item, i) => <ArtistCard data={item} gridIndex={i} />)
+      }
     </div>
   </main>
   <Ticketbanner />
