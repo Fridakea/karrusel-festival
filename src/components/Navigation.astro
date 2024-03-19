@@ -2,28 +2,29 @@
 import "../styles/general.css";
 import "../styles/style.css";
 import "../styles/pc-style.css";
+import Logo from "../components/icons/Logo.astro";
 
 ---
 
 <div class="sidebar" id="minSidebar">
     <a href="javascript:void(0)" class="closebtn" id="closebtn_id" onclick="closeNav()">&times;</a>
-    <a href="../pages/tickets.astro" class="sidebar_button">Tickets</a>
-    <a href="" class="sidebar_button">Program</a>
-    <a href="../pages/tickets.astro" class="sidebar_button">Practical Info</a>
-    <a href="" class="sidebar_button">About</a>
+    <a href="tickets" class="sidebar_button">Tickets</a>
+    <a href="program" class="sidebar_button">Program</a>
+    <a href="practical-info" class="sidebar_button">Practical Info</a>
+    <a href="about-karrusel" class="sidebar_button">About</a>
 </div>
 
 <header>
     <nav>
-        <div class="logo_link">
-            <a href="index.html">
-                <img src="../components/icons/Logo.astro" alt="Karrusel Festival logo" class="nav_icon">
+        <div>
+            <a href="index">
+                <Logo class="nav_icon"/>
             </a>
         </div>
 
-        <span class="burger_button" onclick="openNav()">
-            <img src="../public/icons/burger-menu-ikon.svg" alt="burger menu ikon" class="nav_burger"></span>
-
+        <div class="burger_button" onclick="openNav()">
+            <img src="../icons/burger-menu-ikon.svg" alt="burger menu ikon" class="nav_burger">
+        </div>
     </nav>
 </header>
 
@@ -35,6 +36,8 @@ nav {
   padding: var(--padding-2);
   width: 100%;
   max-width: 1200px;
+  height: 80px;
+  z-index: 99999;
 }
 
 .nav_links {
@@ -46,10 +49,9 @@ nav {
   max-height: 1080px;
   width: 0;
   position: fixed;
-  z-index: 12;
   top: 0;
   right: 0;
-  background-color: gray;
+  background-color: var(--primary-color);
   overflow-x: hidden;
   transition: 0.5s;
   text-align: center;
@@ -58,6 +60,7 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  z-index: 99999;
 }
 
 .sidebar.open {
@@ -101,17 +104,20 @@ nav {
 
 .burger_button {
   display: block;
-  position: absolute;
-  border-width: 0;
+  /*position: absolute;*/
   top: 1.6rem;
   right: 2rem;
-  z-index: 9;
-  aspect-ratio: 1;
+  z-index: 99999;
 }
 
 .burger_button img {
-width: 36px;
+  width: 36px;
   height: 36px;
+}
+
+.nav_icon {
+    height: auto;
+    width: 80px;
 }
 
 </style>
