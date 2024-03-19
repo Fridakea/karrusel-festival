@@ -1,6 +1,8 @@
 ---
 import OutlinedButton from "../components/buttons/Outlined-button.astro";
 import FilledButton from "../components/buttons/Filled-button.astro";
+import ResponsiveButton from "../components/buttons/Responsive-button.astro";
+import ResponsiveOutlinedButton from "../components/buttons/Responsive-outlined-button.astro";
 const { buttonText } = Astro.props;
 ---
 
@@ -20,8 +22,8 @@ const { buttonText } = Astro.props;
     </div>
 
     <div class="ticket_button_wrapper">
-    <FilledButton buttonText="BUY NOW"/>
-    <OutlinedButton />
+    <ResponsiveButton textButton="BUY NOW" />
+    <ResponsiveOutlinedButton outlinedText="PROGRAM" />
     </div>
 </div>
 
@@ -62,6 +64,7 @@ const { buttonText } = Astro.props;
         gap: 8px;
         width: 100%;
         background: transparent;
+        padding: 0 2rem;
     }
 
     h1 {
