@@ -21,8 +21,9 @@ import "../styles/pc-style.css";
             </a>
         </div>
 
-        <span class="burger_button" onclick="openNav()">
-            <img src="../public/icons/burger-menu-ikon.svg" alt="burger menu ikon" class="nav_burger"></span>
+        <span class="burger_button"  >
+            <img src="../public/icons/burger-menu-ikon.svg" alt="burger menu ikon" class="nav_burger" id="burger_knap">
+          </span>
 
     </nav>
 </header>
@@ -64,6 +65,10 @@ nav {
     width: 100vw;
   }
 
+  .open {
+    width: 100vw;
+  }
+
   .sidebar a {
     font-family: var(--font-h);
     font-size: var(--h2-resizable);
@@ -102,7 +107,7 @@ nav {
 .burger_button {
   display: block;
   position: absolute;
-  border-width: 0;
+
   top: 1.6rem;
   right: 2rem;
   z-index: 9;
@@ -117,17 +122,5 @@ width: 36px;
 </style>
 
 <script>
-  window.addEventListener("load", sidenVises);
-
-  function sidenVises() {
-    console.log("sidenVises");
-  }
-
-  function openNav() {
-    document.getElementById("minSidebar").classList.add("open");
-  }
-
-  function closeNav() {
-    document.getElementById("minSidebar").classList.remove("open");
-  }
+  import "/public/scripts/burgermenu.js";
 </script>
