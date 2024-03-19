@@ -1,0 +1,11 @@
+---
+const { data } = Astro.props;
+console.log(data);
+---
+
+<article>
+  <h2>{data.Artist}</h2>
+
+  <p>{data.Scene}</p>
+  <p>{data.Time}</p>
+</article>

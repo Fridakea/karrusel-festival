@@ -2,29 +2,28 @@
 import "../styles/general.css";
 import "../styles/style.css";
 import "../styles/pc-style.css";
-import Logo from "../components/icons/Logo.astro";
 
 ---
 
 <div class="sidebar" id="minSidebar">
     <a href="javascript:void(0)" class="closebtn" id="closebtn_id" onclick="closeNav()">&times;</a>
-    <a href="tickets" class="sidebar_button">Tickets</a>
-    <a href="program" class="sidebar_button">Program</a>
-    <a href="practical-info" class="sidebar_button">Practical Info</a>
-    <a href="about-karrusel" class="sidebar_button">About</a>
+    <a href="../pages/tickets.astro" class="sidebar_button">Tickets</a>
+    <a href="" class="sidebar_button">Program</a>
+    <a href="../pages/tickets.astro" class="sidebar_button">Practical Info</a>
+    <a href="" class="sidebar_button">About</a>
 </div>
 
 <header>
     <nav>
-        <div>
-            <a href="index">
-                <Logo class="nav_icon"/>
+        <div class="logo_link">
+            <a href="index.html">
+                <img src="../components/icons/Logo.astro" alt="Karrusel Festival logo" class="nav_icon">
             </a>
         </div>
 
-        <div class="burger_button" onclick="openNav()">
-            <img src="../icons/burger-menu-ikon.svg" alt="burger menu ikon" class="nav_burger">
-        </div>
+        <span class="burger_button" onclick="openNav()">
+            <img src="../public/icons/burger-menu-ikon.svg" alt="burger menu ikon" class="nav_burger"></span>
+
     </nav>
 </header>
 
@@ -36,22 +35,21 @@ nav {
   padding: var(--padding-2);
   width: 100%;
   max-width: 1200px;
-  height: 80px;
-  z-index: 99999;
 }
 
-.nav_links {
-  display: none;
-}
+  .nav_links {
+    display: none;
+  }
 
 .sidebar {
   height: 100vh;
   max-height: 1080px;
   width: 0;
   position: fixed;
+  z-index: 12;
   top: 0;
   right: 0;
-  background-color: var(--primary-color);
+  background-color: gray;
   overflow-x: hidden;
   transition: 0.5s;
   text-align: center;
@@ -60,80 +58,76 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  z-index: 99999;
 }
 
-.sidebar.open {
-  width: 100vw;
-}
+  .sidebar.open {
+    width: 100vw;
+  }
 
-.sidebar a {
-  font-family: var(--font-h);
-  font-size: var(--h2-resizable);
-  padding: 8px;
-  transition: 0.2s;
-}
+  .sidebar a {
+    font-family: var(--font-h);
+    font-size: var(--h2-resizable);
+    padding: 8px;
+    transition: 0.2s;
+  }
 
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
 
-#closebtn_id {
-  position: absolute;
-  top: 1.6rem;
-  right: 2rem;
-  text-decoration: none;
-}
+  #closebtn_id {
+    position: absolute;
+    top: 1.6rem;
+    right: 2rem;
+    text-decoration: none;
+  }
 
-.sidebar_button {
-  width: 100%;
-  display: block;
-  padding: 9px 16px;
-  text-align: center;
-  border: none;
-  white-space: normal;
-  float: none;
-  outline: 0;
-  text-decoration: none;
-  cursor: pointer;
-}
+  .sidebar_button {
+    width: 100%;
+    display: block;
+    padding: 9px 16px;
+    text-align: center;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
 .burger_button {
   display: block;
-  /*position: absolute;*/
+  position: absolute;
+  border-width: 0;
   top: 1.6rem;
   right: 2rem;
-  z-index: 99999;
+  z-index: 9;
+  aspect-ratio: 1;
 }
 
 .burger_button img {
-  width: 36px;
+width: 36px;
   height: 36px;
-}
-
-.nav_icon {
-    height: auto;
-    width: 80px;
 }
 
 </style>
 
 <script>
-    window.addEventListener("load", sidenVises);
+  window.addEventListener("load", sidenVises);
 
-    function sidenVises() {
+  function sidenVises() {
     console.log("sidenVises");
-    }
+  }
 
-    function openNav() {
+  function openNav() {
     document.getElementById("minSidebar").classList.add("open");
-    }
+  }
 
-    function closeNav() {
+  function closeNav() {
     document.getElementById("minSidebar").classList.remove("open");
-    }
+  }
 </script>
