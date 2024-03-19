@@ -5,7 +5,7 @@ let margin = "";
 if (gridIndex % 2 === 1) margin = "mt-xl"; // Every second element gets mt-xl
 if (gridIndex % 4 === 1) margin = "mt-l"; // Every 4th element overrides to mt-l
 
-const imgPath = `../../public/artister/${data?.Image}`;
+const imgPath = `../artister/${data?.Image}`;
 ---
 
 <a class={`${className} ${margin}`} href=`/artist-single-view/${data?.slug}`>
