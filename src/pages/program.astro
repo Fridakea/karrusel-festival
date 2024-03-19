@@ -38,7 +38,7 @@ console.log("artist", artists);
     <div class="uneven-grid">
       {
         artists
-          .filter((item) => item?.["Playing Date"] === thursday2024)
+          .filter((item) => item?.playingdate === thursday2024)
           .map((item, i) => <ArtistCard data={item} gridIndex={i} />)
       }
     </div>
@@ -51,7 +51,7 @@ console.log("artist", artists);
     <div class="uneven-grid">
       {
         artists
-          .filter((item) => item?.["Playing Date"] === friday2024)
+          .filter((item) => item?.playingdate === friday2024)
           .map((item, i) => <ArtistCard data={item} gridIndex={i} />)
       }
     </div>
