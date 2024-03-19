@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../layouts/Main-layout.astro";
+import Navigation from "../components/Navigation.astro";
 import FacebookIcon from "../components/icons/Facebook-icon.astro";
 import SoundcloudIcon from "../components/icons/Soundcloud-icon.astro";
 import InstagramIcon from "../components/icons/Instagram-icon.astro";
@@ -10,6 +11,8 @@ const { title } = Astro.props;
 ---
 
 <MainLayout title="SEE YOU AT KARRUSEL FESTIVAL">
+  <Navigation />
+
   <div class="artist-hero-image flex-row flex-center">
     <h1>Acid Pauli</h1>
   </div>
