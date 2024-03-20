@@ -99,20 +99,24 @@ const { title, className } = Astro.props;
         <a href="https://www.karrusel.dk/#/gallery-2021/"><img src="../artister/about40_Mantas-Hesthaven_wide.jpeg" alt="Wide Image 3" /></a>
       </div>
     </section>
+    <h2>VIDEOS</h2>
     <section class="about_videos">
-      <h2>VIDEOS</h2>
       <div class="video-container">
-        <iframe src="https://www.youtube.com/watch?v=w5XwDzNwiSk&t=1s" frameborder="0" allowfullscreen></iframe>
+        <video controls>
+          <source src="../videos/Karrusel 2023 | Aftermovie.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
       <div class="video-container">
-        <iframe src="https://www.youtube.com/watch?v=XHG-7BhHRSM&t=1s" frameborder="0" allowfullscreen></iframe>
+        <video controls>
+          <source src="../videos/Karrusel 2022 | Aftermovie.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </section>
-
-    <Ticketbanner />
-    <hr />
   </main>
-
+  <hr />
+  <Ticketbanner />
   <Footer />
 </MainLayout>
 
@@ -243,13 +247,13 @@ const { title, className } = Astro.props;
     margin-right: 0; /* Remove right margin for the last video container */
   }
 
-  .video-container iframe {
+  .video-container video {
     width: 100%;
   }
 
   @media (max-width: 767px) {
     .video-container {
-      flex: 0 0 100%; /* Ensure each video takes up full width on mobile */
+      flex-basis: 100%; /* Reset the width to full width for mobile */
       margin-right: 0; /* Reset margin */
       margin-bottom: 20px; /* Add spacing between videos on mobile */
     }
