@@ -20,6 +20,7 @@ import "../styles/pc-style.css";
   <style>
     .countdown-wrapper {
     background: transparent;
+    margin-bottom: 40px;
   }
 
   ul {
@@ -30,7 +31,7 @@ import "../styles/pc-style.css";
 
   ul li {
     list-style-type: none;
-    font-size: 2rem;
+    font-size: clamp(12px, 3vw, 4rem);
     text-transform: uppercase;
     text-align: center;
     background: transparent;
@@ -38,13 +39,15 @@ import "../styles/pc-style.css";
 
   li span {
     display: block;
-    font-size: 8rem;
+    /*font-size: 8rem;*/
+    font-size: clamp(2rem, 10vw, 8rem);
     background: transparent;
   }
 
   li.seperator {
     margin: 0 10px;
-    font-size: 8rem !important;
+    /*font-size: 8rem !important;*/
+    font-size: clamp(2rem, 10vw, 8rem) !important;
     line-height: 1;
     background: transparent;
 

@@ -3,6 +3,9 @@ import MainLayout from "../layouts/Main-layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Countdown from "../components/Countdown.astro";
 import Footer from "../components/Footer.astro";
+import ResponsiveButton from "../components/buttons/Responsive-button.astro";
+import ResponsiveOutlinedButton from "../components/buttons/Responsive-outlined-button.astro";
+const { buttonText } = Astro.props;
 const { title } = Astro.props;
 ---
 
@@ -12,6 +15,10 @@ const { title } = Astro.props;
   <div class="hero-section flex-row flex-center">
     <h1>See you at Karrusel Festival</h1>
     <Countdown />
+    <div class="button_box">
+    <ResponsiveButton textButton="BUY TICKET" />
+    <ResponsiveOutlinedButton outlinedText="PROGRAM" />
+    </div>
   </div>
 
   <Footer />
@@ -34,9 +41,20 @@ const { title } = Astro.props;
     }
   }
 
+  .button_box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
   @media (min-width: 768px) {
     .hero-section h1 {
       font-size: 5rem;
     }
+
+    .button_box {
+    flex-direction: row;
+    gap: 16px;
+  }
   }
 </style>
