@@ -1,0 +1,56 @@
+---
+import "../styles/general.css";
+import "../styles/style.css";
+import "../styles/pc-style.css";
+---
+
+<div id="countdown" class="countdown-wrapper">
+    <ul>
+      <li><span id="days">00</span>days</li>
+      <li class="seperator">:</li>
+      <li><span id="hours">00</span>hours</li>
+      <li class="seperator">:</li>
+      <li><span id="minutes">00</span>minutes</li>
+      <li class="seperator">:</li>
+      <li><span id="seconds">00</span>seconds</li>
+    </ul>
+  </div>
+
+
+  <style>
+    .countdown-wrapper {
+    background: transparent;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    background: transparent;
+  }
+
+  ul li {
+    list-style-type: none;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    background: transparent;
+  }
+
+  li span {
+    display: block;
+    font-size: 8rem;
+    background: transparent;
+  }
+
+  li.seperator {
+    margin: 0 10px;
+    font-size: 8rem !important;
+    line-height: 1;
+    background: transparent;
+
+  }
+  </style>
+
+  <script>
+    import "/public/scripts/countdown.js";
+  </script>
