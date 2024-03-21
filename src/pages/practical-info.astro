@@ -15,21 +15,73 @@ const { title } = Astro.props;
 
   <main>
     <h1>Practical info</h1>
+    <section class="mapswrapper">
+    <h2>MAP OF THE SITE</h2>
+    <div class="maps">
+<img src="maps/bluemap.png" alt="Blå kort">
+<img src="maps/redmap.png" alt="Rød kort">
+</div>
+</section>
+<h2>FAQ</h2>
+<p>Click on category below to scroll to the question you are looking for.</p>
+
+<section class="faqbuttons">
+  
+</section>
     <section class="faq_wrapper">
-        <h2>IMPORTANT INFO</h2>
+        <h2>GENERAL</h2>
         <Line />
-        <FaqRow topic="What is the age limit?" text="18 years old" statusOpen={true}/>
+        <FaqRow topic="What are the opening hours and address?" text="Thursday 18.00-01.00, Friday 18.00-04.00 and Saturday: 18.00-03.00. Music will play all the hours. Address is Refshalevej 193, 1432 Copenhagen." statusOpen={true}/>
         <Line />
-        <FaqRow topic="Can I upgrade my ticket?" statusClosed={true}/>
+        <FaqRow topic="How will I get to the festival?" text="We recommend taking a bike. You can also use public transportation: Bus 2A at the stop “Refshaleøen” and the harbour bus at the stop “Refshaleøen”. " statusOpen={true}/>
         <Line />
-        <FaqRow topic="Is there a ticket fee on top?" statusClosed={true}/>
+        <FaqRow topic="Can I join the festival when I have mobility impairment and use a wheelchair?" text="Yes, but you need to bring a companion (free of charge if documented) and be prepared for a rough ride. Most of the surface is grass or wood chips and it can be muddy. Unfortunately there will not be raised viewing spots for mobility impairment." statusOpen={true}/>
         <Line />
-        <FaqRow topic="How do I exchange my PDF ticket for a wrist band?" statusClosed={true}/>
+        <FaqRow topic="What type of music will there be?" text="All days will consist of disco, house, and techno music." statusOpen={true}/>
         <Line />
-    </section>
+        <FaqRow topic="Is the festival environmentally sustainable? " text="All trash will be sorted, all beverages are served in reusable cups, almost all beverages are organic, no straws are used, we use organic crew t-shirts. Wristbands are eco-friendly materials, and we try to limit the use of things that cannot be re-used (like banners, confetti)." statusOpen={true}/>
+        <Line />
+        <FaqRow topic="How can I help the festival to be as sustainable as possible?" text="Simply use the trash buckets. Don’t bring confetti and glitter. Bring your own water bottle or buy one at our bars and take advantage of our free drinking water station. Use the pocket ashtray (you’ll be offered one when you get your wristband). Don’t print your ticket or timetable, but download it to your phone. Take a bike or public transport to the festival please." statusOpen={true}/>
+        <Line />
+        <FaqRow topic="Can I volunteer at the festival?" text="Yes. Please go to the Volunteer page to sign up. Any other questions? Please email us at info@nusnus.dk." statusOpen={true}/>
+        <Line />
+     
+
+   
+      <h2>TICKETS</h2>
+      <Line />
+      <FaqRow topic="What is the age limit?" text="18 years old" statusOpen={true}/>
+      <Line />
+
+      <h2>ON SITE</h2>
+      <Line />
+      <FaqRow topic="What is the age limit?" text="18 years old" statusOpen={true}/>
+        <Line />
+
+  </section>
   </main>
 
   <Ticketbanner />
 
   <Footer />
 </MainLayout>
+
+<style>
+.mapswrapper{
+  text-align: center;
+}
+
+.maps{
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+.faq_wrapper {
+      margin: 60px 0 120px 0;
+  }
+
+  h2{
+    margin-top: 4rem;
+  }
+  </style>
