@@ -2,26 +2,31 @@
 import "../styles/general.css";
 import "../styles/style.css";
 import "../styles/pc-style.css";
-import "../components/Navigation.astro";
+import Logo from "../components/icons/Logo.astro";
 ---
 
 <div class="sidebar" id="minSidebar">
-  <a href="javascript:void(0)" class="closebtn" id="closebtn_id" onclick="closeNav()">&times;</a>
-  <a href="../pages/tickets.astro" class="sidebar_button">Tickets</a>
-  <a href="" class="sidebar_button">Program</a>
-  <a href="../pages/tickets.astro" class="sidebar_button">Practical Info</a>
-  <a href="" class="sidebar_button">About</a>
+  <a href="javascript:void(0)" class="closebtn" id="closebtn_id">&times;</a>
+  <a href="tickets" class="sidebar_button">Tickets</a>
+  <a href="program" class="sidebar_button">Program</a>
+  <a href="practical-info" class="sidebar_button">Practical Info</a>
+  <a href="about-karrusel" class="sidebar_button">About</a>
 </div>
 
 <header>
   <nav>
-    <div class="logo_link">
-      <a href="index.html">
-        <img src="../components/icons/Logo.astro" alt="Karrusel Festival logo" class="nav_icon" />
-      </a>
-    </div>
+    <a href="/">
+      <Logo />
+    </a>
 
-    <span class="burger_button" onclick="openNav()"> <img src="../public/icons/burger-menu-ikon.svg" alt="burger menu ikon" class="nav_burger" /></span>
+    <span class="burger_button">
+      <img
+        src="../icons/burger-menu-ikon.svg"
+        alt="burger menu ikon"
+        class="nav_burger"
+        id="burger_knap"
+      />
+    </span>
   </nav>
 </header>
 
@@ -30,9 +35,9 @@ import "../components/Navigation.astro";
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--padding-2);
+    padding: 16px;
     width: 100%;
-    max-width: 1200px;
+    margin: auto;
   }
 
   .nav_links {
@@ -47,7 +52,7 @@ import "../components/Navigation.astro";
     z-index: 12;
     top: 0;
     right: 0;
-    background-color: gray;
+    background-color: var(--primary-color);
     overflow-x: hidden;
     transition: 0.5s;
     text-align: center;
@@ -62,9 +67,13 @@ import "../components/Navigation.astro";
     width: 100vw;
   }
 
+  .open {
+    width: 100vw;
+  }
+
   .sidebar a {
-    font-family: var(--font-h);
-    font-size: var(--h2-resizable);
+    font-family: "Andale Mono Regular";
+    font-size: var(--spacing-xlarge);
     padding: 8px;
     transition: 0.2s;
   }
@@ -73,15 +82,15 @@ import "../components/Navigation.astro";
     position: absolute;
     top: 0;
     right: 25px;
-    font-size: 36px;
     margin-left: 50px;
   }
 
   #closebtn_id {
     position: absolute;
-    top: 1.6rem;
-    right: 2rem;
+    top: 0.8rem;
+    right: 2.2rem;
     text-decoration: none;
+    padding: 0;
   }
 
   .sidebar_button {
@@ -100,8 +109,7 @@ import "../components/Navigation.astro";
   .burger_button {
     display: block;
     position: absolute;
-    border-width: 0;
-    top: 1.6rem;
+    top: 1.2rem;
     right: 2rem;
     z-index: 9;
     aspect-ratio: 1;
@@ -111,20 +119,22 @@ import "../components/Navigation.astro";
     width: 36px;
     height: 36px;
   }
+
+  .nav_icon {
+    width: 75px;
+  }
+
+  @media (min-width: 768px) {
+    .nav_icon {
+      width: 134px;
+    }
+
+    .logo_text p {
+      font-size: 1rem;
+    }
+  }
 </style>
 
 <script>
-  window.addEventListener("load", sidenVises);
-
-  function sidenVises() {
-    console.log("sidenVises");
-  }
-
-  function openNav() {
-    document.getElementById("minSidebar").classList.add("open");
-  }
-
-  function closeNav() {
-    document.getElementById("minSidebar").classList.remove("open");
-  }
+  import "/public/scripts/burgermenu.js";
 </script>
