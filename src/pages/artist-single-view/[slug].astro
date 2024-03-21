@@ -1,0 +1,131 @@
+---
+import MainLayout from "../../layouts/Main-layout.astro";
+import Navigation from "../../components/Navigation.astro";
+import FacebookIcon from "../../components/icons/Facebook-icon.astro";
+import SoundcloudIcon from "../../components/icons/Soundcloud-icon.astro";
+import InstagramIcon from "../../components/icons/Instagram-icon.astro";
+import SpotifyIcon from "../../components/icons/Spotify-icon.astro";
+import Ticketbanner from "../../components/Ticketbanner.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const data = await fetch(
+    "https://fmhjnrarhnsjaffenfhg.supabase.co/rest/v1/karrusel_redesign",
+    {
+      method: "GET",
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtaGpucmFyaG5zamFmZmVuZmhnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MTIyNDEsImV4cCI6MjAyNTk4ODI0MX0.pWJ54xSfP_rmLrSXXLnJ-dmpaAK1IgomGXE6UgCDcfU",
+      },
+    }
+  ).then((response) => response.json());
+
+  return data.map((artist) => {
+    return {
+      params: { slug: artist.slug },
+      props: { artist },
+    };
+  });
+}
+
+interface Props {
+  artist: any;
+  title: string;
+}
+
+const { artist, title } = Astro.props;
+console.log("Data:", artist);
+---
+
+<MainLayout title="Artister single view">
+  <Navigation />
+
+  <div class="artist-hero-image flex-row flex-center">
+    <img
+      src={`../artister/${artist.Image}`}
+      alt={`Billede af ${artist.Artist}`}
+    />
+    <h1>{artist?.Artist}</h1>
+  </div>
+
+  <main>
+    <a class="flex-row gap-s" href="/program">
+      <img src="../../public/icons/back-btn.svg" alt="Go-back arrow" />
+      Back to artists
+    </a>
+
+    <div class="flex-col gap-l pc-flex-row mt-l">
+      <div class="artist-info-left flex-col pc-flex-1">
+        <h3>When?</h3>
+        <p>{`${artist.playingdate} at ${artist.Time} o'clock`}</p>
+
+        <h3>Where?</h3>
+        <p>{artist?.Scene}</p>
+
+        <h3>Wanna hear more?</h3>
+        <div class="icon-images flex-row flex-align-center gap-m">
+          <a href={artist?.Instagram}><InstagramIcon /></a>
+          <a href={artist?.Soundcloud}><SoundcloudIcon /></a>
+          <a href={artist?.Facebook}><FacebookIcon /></a>
+          <a href={artist?.Spotify}><SpotifyIcon /></a>
+        </div>
+      </div>
+
+      <div class="flex-col pc-flex-2">
+        <h3>{`Who is ${artist?.Artist}`}</h3>
+        <p>
+          {
+            artist?.descripton ??
+              "No information about this artist yet. It will be anounced later."
+          }
+        </p>
+      </div>
+    </div>
+  </main>
+  <Ticketbanner />
+
+  <Footer />
+</MainLayout>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .artist-hero-image {
+    height: 250px;
+
+    & img {
+      position: absolute;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    & h1 {
+      position: absolute;
+      background-color: transparent;
+    }
+  }
+
+  .artist-info-left {
+    & p,
+    .icon-images {
+      padding: var(--spacing-small);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .artist-hero-image {
+      height: 400px;
+
+      & img {
+        height: 400px;
+      }
+    }
+  }
+</style>
