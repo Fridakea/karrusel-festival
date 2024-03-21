@@ -1,0 +1,33 @@
+---
+const { textButton } = Astro.props;
+---
+
+<button>{ textButton }</button>
+
+<style>
+  button {
+    width: 100%;
+    height: auto;
+    padding: 1rem 2rem;
+    border: none;
+    color: var(--primary-color);
+    background-color: var(--tertiary-color);
+    box-shadow: 0 0 10px var(--tertiary-color);
+    text-transform: uppercase;
+  }
+
+  button:hover {
+    text-decoration: underline;
+    background-color: var(--tertiary-shade-color);
+    box-shadow: 0 0 10px var(--tertiary-shade-color);
+  }
+
+  @media (min-width: 768px) {
+    button {
+    width: auto;
+    min-width: 10rem;
+    height: auto;
+    padding: 1rem 2rem;
+  }
+  }
+</style>
