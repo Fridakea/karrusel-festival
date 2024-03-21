@@ -15,7 +15,6 @@ function removeHide() {
   this.removeEventListener("click", removeHide);
 
   hiddenP.classList.add("show");
-  //faqClose.classList.add("hide");
   faqOpen.classList.add("show");
   faqOpen.addEventListener("click", addHide);
 }
