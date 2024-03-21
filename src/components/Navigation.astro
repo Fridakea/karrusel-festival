@@ -2,53 +2,49 @@
 import "../styles/general.css";
 import "../styles/style.css";
 import "../styles/pc-style.css";
-
+import Logo from "../components/icons/Logo.astro";
 ---
 
 <div class="sidebar" id="minSidebar">
-    <a href="javascript:void(0)" class="closebtn" id="closebtn_id">&times;</a>
-    <a href="tickets" class="sidebar_button">Tickets</a>
-    <a href="program" class="sidebar_button">Program</a>
-    <a href="practical-info" class="sidebar_button">Practical Info</a>
-    <a href="about-karrusel" class="sidebar_button">About</a>
+  <a href="javascript:void(0)" class="closebtn" id="closebtn_id">&times;</a>
+  <a href="tickets" class="sidebar_button">Tickets</a>
+  <a href="program" class="sidebar_button">Program</a>
+  <a href="practical-info" class="sidebar_button">Practical Info</a>
+  <a href="about-karrusel" class="sidebar_button">About</a>
 </div>
 
 <header>
-    <nav>
-        <div class="logo_link">
-            <a href="index">
-              <div class="logo_wrapper">
-                <img src="../icons/karrusel-logo.svg" alt="Karrusel Festival logo" class="nav_icon">
-                <div class="logo_text">
-                  <p>22 - 24 AUGUST 2024</p>
-                  <p>COPENHAGEN, DK</p>
-                </div>
-              </div>
-            </a>
-        </div>
+  <nav>
+    <a href="/">
+      <Logo />
+    </a>
 
-        <span class="burger_button"  >
-            <img src="../public/icons/burger-menu-ikon.svg" alt="burger menu ikon" class="nav_burger" id="burger_knap">
-          </span>
-
-    </nav>
+    <span class="burger_button">
+      <img
+        src="../public/icons/burger-menu-ikon.svg"
+        alt="burger menu ikon"
+        class="nav_burger"
+        id="burger_knap"
+      />
+    </span>
+  </nav>
 </header>
 
 <style>
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  width: 100%;
-  margin: auto;
-
-}
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+    margin: auto;
+  }
 
   .nav_links {
     display: none;
   }
 
+<<<<<<< HEAD
 .sidebar {
   height: 100vh;
   max-height: 1080px;
@@ -99,6 +95,26 @@ nav {
   margin: 0;
   font-size: 0.8rem;
 }
+=======
+  .sidebar {
+    height: 100vh;
+    max-height: 1080px;
+    width: 0;
+    position: fixed;
+    z-index: 12;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    overflow-x: hidden;
+    transition: 0.5s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+>>>>>>> 529a2209995658566c11848a8fb03a0aac707b9d
 
   .sidebar.open {
     width: 100vw;
@@ -109,7 +125,7 @@ nav {
   }
 
   .sidebar a {
-    font-family: 'Andale Mono Regular';
+    font-family: "Andale Mono Regular";
     font-size: var(--spacing-xlarge);
     text-wrap: nowrap;
     padding: 8px;
@@ -144,6 +160,7 @@ nav {
     cursor: pointer;
   }
 
+<<<<<<< HEAD
 .burger_button {
   display: block;
   position: absolute;
@@ -175,9 +192,36 @@ nav {
 .burger_button {
   top: 2rem;
   right: 2rem;
+=======
+  .burger_button {
+    display: block;
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+    z-index: 9;
+    aspect-ratio: 1;
+  }
+
+  .burger_button img {
+    width: 36px;
+    height: 36px;
+>>>>>>> 529a2209995658566c11848a8fb03a0aac707b9d
   }
 }
 
+  .nav_icon {
+    width: 75px;
+  }
+
+  @media (min-width: 768px) {
+    .nav_icon {
+      width: 134px;
+    }
+
+    .logo_text p {
+      font-size: 1rem;
+    }
+  }
 </style>
 
 <script>
