@@ -1,9 +1,9 @@
 ---
 import MainLayout from "../../layouts/Main-layout.astro";
 import Navigation from "../../components/Navigation.astro";
-import FacebookIcon from "../../components/icons/Facebook-icon.astro";
-import SoundcloudIcon from "../../components/icons/Soundcloud-icon.astro";
 import InstagramIcon from "../../components/icons/Instagram-icon.astro";
+import SoundcloudIcon from "../../components/icons/Soundcloud-icon.astro";
+import FacebookIcon from "../../components/icons/Facebook-icon.astro";
 import SpotifyIcon from "../../components/icons/Spotify-icon.astro";
 import Ticketbanner from "../../components/Ticketbanner.astro";
 import Footer from "../../components/Footer.astro";
@@ -63,11 +63,22 @@ console.log("Data:", artist);
         <p>{artist?.Scene}</p>
 
         <h3>Wanna hear more?</h3>
-        <div class="icon-images flex-row flex-align-center gap-m">
-          <a href={artist?.Instagram}><InstagramIcon /></a>
-          <a href={artist?.Soundcloud}><SoundcloudIcon /></a>
-          <a href={artist?.Facebook}><FacebookIcon /></a>
-          <a href={artist?.Spotify}><SpotifyIcon /></a>
+        <div class="flex-row flex-align-center gap-m">
+          <a href={artist?.Instagram}>
+            <InstagramIcon />
+          </a>
+
+          <a href={artist?.Soundcloud}>
+            <SoundcloudIcon />
+          </a>
+
+          <a href={artist?.Facebook}>
+            <FacebookIcon />
+          </a>
+
+          <a href={artist?.Spotify}>
+            <SpotifyIcon />
+          </a>
         </div>
       </div>
 
