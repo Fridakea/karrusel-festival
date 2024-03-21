@@ -44,24 +44,56 @@ import Logo from "../components/icons/Logo.astro";
     display: none;
   }
 
-  .sidebar {
-    height: 100vh;
-    max-height: 1080px;
-    width: 0;
-    position: fixed;
-    z-index: 12;
-    top: 0;
-    right: 0;
-    background-color: var(--primary-color);
-    overflow-x: hidden;
-    transition: 0.5s;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-  }
+.sidebar {
+  height: 100vh;
+  max-height: 1080px;
+  width: 0;
+  position: fixed;
+  z-index: 12;
+  top: 0;
+  right: 0;
+  background-color: var(--primary-color);
+  overflow-x: hidden;
+  transition: 0.5s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo_link {
+  z-index: 9999;
+}
+
+.logo_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo_link img {
+  display: block;
+}
+
+.logo_link a{
+  width: 100%;
+  height: auto;
+  text-decoration: none;
+}
+
+.logo_text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.logo_text p{
+  margin: 0;
+  font-size: 0.8rem;
+}
 
   .sidebar.open {
     width: 100vw;
@@ -74,6 +106,7 @@ import Logo from "../components/icons/Logo.astro";
   .sidebar a {
     font-family: "Andale Mono Regular";
     font-size: var(--spacing-xlarge);
+    text-wrap: nowrap;
     padding: 8px;
     transition: 0.2s;
   }
@@ -106,6 +139,39 @@ import Logo from "../components/icons/Logo.astro";
     cursor: pointer;
   }
 
+<<<<<<< HEAD
+.burger_button {
+  display: block;
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  z-index: 9;
+  aspect-ratio: 1;
+}
+
+.burger_button img {
+  width: 36px;
+  height: 36px;
+}
+
+.nav_icon{
+  width: 75px;
+
+}
+
+@media (min-width: 768px) {
+  .nav_icon{
+  width: 134px;
+}
+
+.logo_text p{
+  font-size: 1rem;
+}
+
+.burger_button {
+  top: 2rem;
+  right: 2rem;
+=======
   .burger_button {
     display: block;
     position: absolute;
@@ -118,7 +184,9 @@ import Logo from "../components/icons/Logo.astro";
   .burger_button img {
     width: 36px;
     height: 36px;
+>>>>>>> 529a2209995658566c11848a8fb03a0aac707b9d
   }
+}
 
   .nav_icon {
     width: 75px;
