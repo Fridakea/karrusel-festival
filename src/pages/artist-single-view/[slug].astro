@@ -64,21 +64,37 @@ console.log("Data:", artist);
 
         <h3>Wanna hear more?</h3>
         <div class="flex-row flex-align-center gap-m">
-          <a href={artist?.Instagram}>
-            <InstagramIcon />
-          </a>
+          {
+            artist?.Instagram && (
+              <a href={artist?.Instagram}>
+                <InstagramIcon />
+              </a>
+            )
+          }
 
-          <a href={artist?.Soundcloud}>
-            <SoundcloudIcon />
-          </a>
+          {
+            artist?.Soundcloud && (
+              <a href={artist?.Soundcloud}>
+                <SoundcloudIcon />
+              </a>
+            )
+          }
 
-          <a href={artist?.Facebook}>
-            <FacebookIcon />
-          </a>
+          {
+            artist?.Facebook && (
+              <a href={artist?.Facebook}>
+                <FacebookIcon />
+              </a>
+            )
+          }
 
-          <a href={artist?.Spotify}>
-            <SpotifyIcon />
-          </a>
+          {
+            artist?.Spotify && (
+              <a href={artist?.Spotify}>
+                <SpotifyIcon />
+              </a>
+            )
+          }
         </div>
       </div>
 
