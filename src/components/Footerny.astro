@@ -1,0 +1,105 @@
+---
+import FacebookIcon from "../components/icons/Facebook-icon.astro";
+import SoundcloudIcon from "../components/icons/Soundcloud-icon.astro";
+import InstagramIcon from "../components/icons/Instagram-icon.astro";
+import Logo from "../components/icons/Logo.astro";
+import SignupButton from "../components/buttons/Signup-button.astro";
+---
+
+<hr />
+
+<footer>
+  <div class="flex-col flex-center mb-l">
+    <h4>Shortcuts</h4>
+    <a href="/tickets">Tickets</a>
+    <a href="/program">Program</a>
+    <a href="/practical-info">Practical info</a>
+    <a href="/about-karrusel">About</a>
+  </div>
+
+  <div class="flex-col flex-center mb-l">
+    <h4>Join our newsletter</h4>
+
+    <form class="mb-l flex-row flex-center">
+      <input class="newsletter-input" type="email" placeholder="EMAIL" />
+      <button class="tiltet-button" type="submit">
+        <SignupButton />
+        <span>SIGN UP NOW</span>
+      </button>
+    </form>
+
+    <a class="pc-only" href="/">
+      <Logo />
+    </a>
+  </div>
+
+  <div>
+    <div class="flex-col flex-center mb-l">
+      <h4>Contact us</h4>
+      <p class="mb-m">Refshalevej 193, 1432 Copenhagen</p>
+      <p>info@nusnus.dk</p>
+    </div>
+
+    <div class="flex-col flex-center mb-l">
+      <h4>Follow us</h4>
+      <div class="flex-row gap-m flex-center">
+        <a href="https://www.facebook.com/Karruselfestival">
+          <FacebookIcon />
+        </a>
+        <a href="https://on.soundcloud.com/pZ4aZX9xPWEj54818">
+          <SoundcloudIcon />
+        </a>
+        <a href="https://www.instagram.com/karruselfest">
+          <InstagramIcon />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <a class="pc-hide" href="/">
+    <Logo />
+  </a>
+</footer>
+
+<style>
+  footer {
+    max-width: 1200px;
+    margin: auto;
+    padding-top: var(--spacing-large);
+    display: grid;
+
+    & div h4 {
+      margin-bottom: var(--spacing-medium);
+    }
+  }
+
+  a,
+  p {
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  img {
+    width: 150px;
+    height: 100%;
+  }
+
+  @media (min-width: 768px) {
+    footer {
+      padding: var(--spacing-large) var(--spacing-large) 0 var(--spacing-large);
+      grid-template-columns: 1fr 2fr 1fr;
+
+      & div h4 {
+        margin-bottom: var(--spacing-large);
+      }
+    }
+
+    a {
+      margin-bottom: var(--spacing-medium);
+    }
+  }
+</style>
