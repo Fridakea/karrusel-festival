@@ -8,58 +8,64 @@ import FaqRow from "../components/Faq-row.astro";
 const { title } = Astro.props;
 ---
 
-<MainLayout title="Tickets">
-    <NavigationMenu />
-    <main class="tickets_wrapper">
-        <h1>FULL FESTIVAL PASS</h1>
-        <h4>COPENHAGEN, DK</h4>
-        <TicketCard />
-        <section class="faq_wrapper">
-            <h2>IMPORTANT INFO</h2>
-            <Line />
-            <FaqRow topic="What is the age limit?" text="18 years old" statusOpen={true}/>
-            <Line />
-            <FaqRow topic="Can I upgrade my ticket?" statusClosed={true}/>
-            <Line />
-            <FaqRow topic="Is there a ticket fee on top?" statusClosed={true}/>
-            <Line />
-            <FaqRow topic="How do I exchange my PDF ticket for a wrist band?" statusClosed={true}/>
-            <Line />
-        </section>
-    </main>
+<MainLayout
+  title="Tickets"
+  description="Subpage to Karrusel festival with information about tickets, how to buy tickets and a link directly to ticketmaster"
+>
+  <NavigationMenu />
+  <main class="tickets_wrapper">
+    <h1>FULL FESTIVAL PASS</h1>
+    <h4>COPENHAGEN, DK</h4>
+    <TicketCard />
+    <section class="faq_wrapper">
+      <h2>IMPORTANT INFO</h2>
+      <Line />
+      <FaqRow
+        topic="What is the age limit?"
+        text="18 years old"
+        statusOpen={true}
+      />
+      <Line />
+      <FaqRow topic="Can I upgrade my ticket?" statusClosed={true} />
+      <Line />
+      <FaqRow topic="Is there a ticket fee on top?" statusClosed={true} />
+      <Line />
+      <FaqRow
+        topic="How do I exchange my PDF ticket for a wrist band?"
+        statusClosed={true}
+      />
+      <Line />
+    </section>
+  </main>
 
-    <Footer />
+  <Footer />
 </MainLayout>
 
 <style>
+  .tickets_wrapper {
+    display: flex;
+    flex-direction: column;
+    /*gap: 40px;*/
+    margin-bottom: 60px;
+  }
+
+  .faq_wrapper {
+    margin: 60px 0 120px 0;
+  }
+
+  .tickets_wrapper h4 {
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
     .tickets_wrapper {
-        display: flex;
-        flex-direction: column;
-        /*gap: 40px;*/
-        margin-bottom: 60px;
+      /*gap: 80px;*/
+      margin-bottom: 120px;
     }
-
-    .faq_wrapper {
-        margin: 60px 0 120px 0;
-    }
-
-    .tickets_wrapper h4 {
-            text-align: center;
-        }
-
-    @media (min-width: 768px) {
-        .tickets_wrapper {
-        /*gap: 80px;*/
-        margin-bottom: 120px;
-    }
-
-
-
-    }
-
+  }
 </style>
 
 <script>
-    import "/public/scripts/burgermenu.js";
-    import "/public/scripts/faqrows.js";
-  </script>
+  import "/public/scripts/burgermenu.js";
+  import "/public/scripts/faqrows.js";
+</script>
