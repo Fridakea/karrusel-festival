@@ -6,8 +6,8 @@ const { topic, text, statusOpen, statusClosed } = Astro.props;
 <div class="faq-row">
     <div class="text_col">
         <h4>{topic}</h4>
-        {statusOpen && <img src="../public/icons/luk_ikon.svg" alt="kryds ikon" class="faq_icon" id="closed_icon">}
-        {statusClosed && <img src="../public/icons/aaben_ikon.svg" alt="plus ikon" class="faq_icon" id="opened_icon">}
+        {statusOpen && <img src="../icons/luk_ikon.svg" alt="kryds ikon" class="faq_icon" id="closed_icon">}
+        {statusClosed && <img src="../icons/aaben_ikon.svg" alt="plus ikon" class="faq_icon" id="opened_icon">}
     </div>
     <p class="faq_text" id="faq_p_hidden">{text}</p>
 
