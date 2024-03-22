@@ -7,10 +7,13 @@ import FooterNy from "../components/Footerny.astro";
 import ResponsiveButton from "../components/buttons/Responsive-button.astro";
 import ResponsiveOutlinedButton from "../components/buttons/Responsive-outlined-button.astro";
 const { buttonText } = Astro.props;
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
-<MainLayout title="Karrusel Festival">
+<MainLayout
+  title="Karrusel Festival"
+  description="Karrusel Festivals landing page"
+>
   <Navigation />
 
   <div class="hero-section flex-row flex-center">

@@ -23,9 +23,14 @@ const artists = await fetch(
 });
 
 console.log("artist", artists);
+
+const { title, description } = Astro.props;
 ---
 
-<MainLayout title="Program">
+<MainLayout
+  title="Program"
+  description="Subpage to Karrusel festival with the program for 2024 artist"
+>
   <Navigation />
 
   <main>

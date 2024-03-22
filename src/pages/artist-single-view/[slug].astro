@@ -31,13 +31,17 @@ export async function getStaticPaths() {
 interface Props {
   artist: any;
   title: string;
+  description: string;
 }
 
-const { artist, title } = Astro.props;
+const { artist, title, description } = Astro.props;
 console.log("Data:", artist);
 ---
 
-<MainLayout title={artist.Artist}>
+<MainLayout
+  title={artist.Artist}
+  description={`Subpage to Karrusel festival with information about the ${artist.Artist}`}
+>
   <Navigation />
 
   <div class="artist-hero-image flex-row flex-center">
