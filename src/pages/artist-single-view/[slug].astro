@@ -31,15 +31,16 @@ export async function getStaticPaths() {
 interface Props {
   artist: any;
   title: string;
+  description: string;
 }
 
-const { artist, title } = Astro.props;
+const { artist, title, description } = Astro.props;
 console.log("Data:", artist);
 ---
 
 <MainLayout
   title={artist.Artist}
-  description="Subpage to Karrusel festival with information about the individual artist that play at Karrusel festival 2024"
+  description={`Subpage to Karrusel festival with information about the ${artist.Artist}`}
 >
   <Navigation />
 

@@ -23,6 +23,8 @@ const artists = await fetch(
 });
 
 console.log("artist", artists);
+
+const { title, description } = Astro.props;
 ---
 
 <MainLayout
