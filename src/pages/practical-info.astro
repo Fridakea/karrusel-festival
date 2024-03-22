@@ -8,131 +8,249 @@ import Line from "../components/Line.astro";
 const { title } = Astro.props;
 ---
 
-
-
-<MainLayout>
+<MainLayout title="Practical info">
   <Navigation />
 
   <main>
     <h1>Practical info</h1>
     <section class="mapswrapper">
-    <h2>MAP OF THE SITE</h2>
-    <div class="maps">
-<img src="maps/bluemap.png" alt="Blå kort">
-<img src="maps/redmap.png" alt="Rød kort">
-</div>
-</section>
+      <h2>MAP OF THE SITE</h2>
+      <div class="maps">
+        <img src="maps/bluemap.png" alt="Blå kort" />
+        <img src="maps/redmap.png" alt="Rød kort" />
+      </div>
+    </section>
 
-<h2>FAQ</h2>
-<p>Click on category below to scroll to the question you are looking for.</p>
+    <h2>FAQ</h2>
+    <p>
+      Click on category below to scroll to the question you are looking for.
+    </p>
 
-<section class="faqbuttons">
-<button>GENERAL</button>
-<button>TICKETS</button>
-<button>ON SITE</button>
-
-</section>
+    <section class="faqbuttons">
+      <button>GENERAL</button>
+      <button>TICKETS</button>
+      <button>ON SITE</button>
+    </section>
     <section class="faq_wrapper">
-        <h2>GENERAL</h2>
-        <Line />
-        <FaqRow topic="What are the opening hours and address?" text="Thursday 18.00-01.00, Friday 18.00-04.00 and Saturday: 18.00-03.00. Music will play all the hours. Address is Refshalevej 193, 1432 Copenhagen." statusOpen={true}/>
-        <Line />
-        <FaqRow topic="How will I get to the festival?" text="We recommend taking a bike. You can also use public transportation: Bus 2A at the stop “Refshaleøen” and the harbour bus at the stop “Refshaleøen”. " statusOpen={true}/>
-        <Line />
-        <FaqRow topic="Can I join the festival when I have mobility impairment and use a wheelchair?" text="Yes, but you need to bring a companion (free of charge if documented) and be prepared for a rough ride. Most of the surface is grass or wood chips and it can be muddy. Unfortunately there will not be raised viewing spots for mobility impairment." statusOpen={true}/>
-        <Line />
-        <FaqRow topic="What type of music will there be?" text="All days will consist of disco, house, and techno music." statusOpen={true}/>
-        <Line />
-        <FaqRow topic="Is the festival environmentally sustainable? " text="All trash will be sorted, all beverages are served in reusable cups, almost all beverages are organic, no straws are used, we use organic crew t-shirts. Wristbands are eco-friendly materials, and we try to limit the use of things that cannot be re-used (like banners, confetti)." statusOpen={true}/>
-        <Line />
-        <FaqRow topic="How can I help the festival to be as sustainable as possible?" text="Simply use the trash buckets. Don’t bring confetti and glitter. Bring your own water bottle or buy one at our bars and take advantage of our free drinking water station. Use the pocket ashtray (you’ll be offered one when you get your wristband). Don’t print your ticket or timetable, but download it to your phone. Take a bike or public transport to the festival please." statusOpen={true}/>
-        <Line />
-        <FaqRow topic="Can I volunteer at the festival?" text="Yes. Please go to the Volunteer page to sign up. Any other questions? Please email us at info@nusnus.dk." statusOpen={true}/>
-        <Line />
-     
+      <h2>GENERAL</h2>
+      <Line />
+      <FaqRow
+        topic="What are the opening hours and address?"
+        text="Thursday 18.00-01.00, Friday 18.00-04.00 and Saturday: 18.00-03.00. Music will play all the hours. Address is Refshalevej 193, 1432 Copenhagen."
+        statusOpen={true}
+      />
+      <Line />
+      <FaqRow
+        topic="How will I get to the festival?"
+        text="We recommend taking a bike. You can also use public transportation: Bus 2A at the stop “Refshaleøen” and the harbour bus at the stop “Refshaleøen”. "
+        statusOpen={true}
+      />
+      <Line />
+      <FaqRow
+        topic="Can I join the festival when I have mobility impairment and use a wheelchair?"
+        text="Yes, but you need to bring a companion (free of charge if documented) and be prepared for a rough ride. Most of the surface is grass or wood chips and it can be muddy. Unfortunately there will not be raised viewing spots for mobility impairment."
+        statusOpen={true}
+      />
+      <Line />
+      <FaqRow
+        topic="What type of music will there be?"
+        text="All days will consist of disco, house, and techno music."
+        statusOpen={true}
+      />
+      <Line />
+      <FaqRow
+        topic="Is the festival environmentally sustainable? "
+        text="All trash will be sorted, all beverages are served in reusable cups, almost all beverages are organic, no straws are used, we use organic crew t-shirts. Wristbands are eco-friendly materials, and we try to limit the use of things that cannot be re-used (like banners, confetti)."
+        statusOpen={true}
+      />
+      <Line />
+      <FaqRow
+        topic="How can I help the festival to be as sustainable as possible?"
+        text="Simply use the trash buckets. Don’t bring confetti and glitter. Bring your own water bottle or buy one at our bars and take advantage of our free drinking water station. Use the pocket ashtray (you’ll be offered one when you get your wristband). Don’t print your ticket or timetable, but download it to your phone. Take a bike or public transport to the festival please."
+        statusOpen={true}
+      />
+      <Line />
+      <FaqRow
+        topic="Can I volunteer at the festival?"
+        text="Yes. Please go to the Volunteer page to sign up. Any other questions? Please email us at info@nusnus.dk."
+        statusOpen={true}
+      />
+      <Line />
 
-   
       <h2>TICKETS</h2>
       <Line />
-      <FaqRow topic="What is the age limit?" text="18 years old" statusOpen={true}/>
+      <FaqRow
+        topic="What is the age limit?"
+        text="18 years old"
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="Can I upgrade my ticket? " text="Please mail us at info@nusnus.dk with your request and with your existing order number and we may be able to help you out. Thanks for the interest!" statusOpen={true}/>
+      <FaqRow
+        topic="Can I upgrade my ticket? "
+        text="Please mail us at info@nusnus.dk with your request and with your existing order number and we may be able to help you out. Thanks for the interest!"
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="Is there a ticket fee on top? " text="Yes, Ticketmaster will add fees on top of the ticket value. Fees are for handling and administration. It's 25 DKK per ticket and 10 DKK per order. Sorry for the inconvenience." statusOpen={true}/>
+      <FaqRow
+        topic="Is there a ticket fee on top? "
+        text="Yes, Ticketmaster will add fees on top of the ticket value. Fees are for handling and administration. It's 25 DKK per ticket and 10 DKK per order. Sorry for the inconvenience."
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="How do I exchange my PDF ticket for a wristband? " text="Go to the ticket office at the entrance. You can pick up your wristband from 17.00. " statusOpen={true}/>
+      <FaqRow
+        topic="How do I exchange my PDF ticket for a wristband? "
+        text="Go to the ticket office at the entrance. You can pick up your wristband from 17.00. "
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="Can I buy a ticket at the festival entrance on the showday? " text="Yes, but only if tickets are not yet sold out in presale." statusOpen={true}/>
+      <FaqRow
+        topic="Can I buy a ticket at the festival entrance on the showday? "
+        text="Yes, but only if tickets are not yet sold out in presale."
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="Can I enter the festival all night?" text="Yes, doors will be open for entry all night. " statusOpen={true}/>
+      <FaqRow
+        topic="Can I enter the festival all night?"
+        text="Yes, doors will be open for entry all night. "
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="Do I need to bring my ID? " text="Yes, you might need an ID to verify your age." statusOpen={true}/>
+      <FaqRow
+        topic="Do I need to bring my ID? "
+        text="Yes, you might need an ID to verify your age."
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="Can I redeem a ticket for my friend? " text="No, we will put on your wristband when you redeem your ticket, so everyone has to redeem their own ticket in order to get a wristband. However, your ticket is not personal, so you can give your ticket to another person without a problem." statusOpen={true}/>
+      <FaqRow
+        topic="Can I redeem a ticket for my friend? "
+        text="No, we will put on your wristband when you redeem your ticket, so everyone has to redeem their own ticket in order to get a wristband. However, your ticket is not personal, so you can give your ticket to another person without a problem."
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="Can I bring my companion? " text="Yes, when you are disabled you can bring one companion. You both have to be present when you pick up your wristbands and you must be able to show your Companion Card issued by Danish Disability Organisations." statusOpen={true}/>
+      <FaqRow
+        topic="Can I bring my companion? "
+        text="Yes, when you are disabled you can bring one companion. You both have to be present when you pick up your wristbands and you must be able to show your Companion Card issued by Danish Disability Organisations."
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="Can I re-sell or give away my ticket?" text="Yes, you can do so because your ticket is not personal. But do not overcharge for the ticket, that's very uncool and illegal." statusOpen={true}/>
+      <FaqRow
+        topic="Can I re-sell or give away my ticket?"
+        text="Yes, you can do so because your ticket is not personal. But do not overcharge for the ticket, that's very uncool and illegal."
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="Can I get my ticket refunded if I can't go anyway?" text="Sorry, no. Tickets are non-refundable. However, your ticket is not personal, so you can give it away or sell it to others. Remember it’s not legal to overcharge for the ticket." statusOpen={true}/>
+      <FaqRow
+        topic="Can I get my ticket refunded if I can't go anyway?"
+        text="Sorry, no. Tickets are non-refundable. However, your ticket is not personal, so you can give it away or sell it to others. Remember it’s not legal to overcharge for the ticket."
+        statusOpen={true}
+      />
       <Line />
 
       <h2>ON SITE</h2>
       <Line />
-      <FaqRow topic="Where is first aid located? " text="Next to the Tribunen stage" statusOpen={true}/>
+      <FaqRow
+        topic="Where is first aid located? "
+        text="Next to the Tribunen stage"
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="What is your drug policy?" text="It's not allowed to do drugs at Karrusel. If you or someone feels bad, go to the First Aid and Awareness Team tent and they will assist you. They are experienced and will provide advice about drugs, alcohol, legal highs for anything that is troubling you in full confidentiality. First Aid and Awareness Team tents are located close to Tribunen. Ask any festival staff and they will guide you." statusOpen={true}/>
+      <FaqRow
+        topic="What is your drug policy?"
+        text="It's not allowed to do drugs at Karrusel. If you or someone feels bad, go to the First Aid and Awareness Team tent and they will assist you. They are experienced and will provide advice about drugs, alcohol, legal highs for anything that is troubling you in full confidentiality. First Aid and Awareness Team tents are located close to Tribunen. Ask any festival staff and they will guide you."
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="Can I bring my bag to the festival?" text="Yes, max size of bags is 50x40x20 cm." statusOpen={true}/>
+      <FaqRow
+        topic="Can I bring my bag to the festival?"
+        text="Yes, max size of bags is 50x40x20 cm."
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="What will there be on site? " text="3 music stages, a vintage carousel ride, nice bars and food stands, the witch' cave, performances, bonfire, power banks, free water point, merchandise and info stand and much more." statusOpen={true}/>
+      <FaqRow
+        topic="What will there be on site? "
+        text="3 music stages, a vintage carousel ride, nice bars and food stands, the witch' cave, performances, bonfire, power banks, free water point, merchandise and info stand and much more."
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="Will there be camping at the festival? " text="Sorry, no camping." statusOpen={true}/>
+      <FaqRow
+        topic="Will there be camping at the festival? "
+        text="Sorry, no camping."
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="How do I pay on site?" text="We do not accept cash and MobilePay. We do accept: all major credit cards, Apple Pay, and Google Pay." statusOpen={true}/>
+      <FaqRow
+        topic="How do I pay on site?"
+        text="We do not accept cash and MobilePay. We do accept: all major credit cards, Apple Pay, and Google Pay."
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="Will there be lockers on site? " text="Yes, but there is no room for big travel backpacks and suitcases. Dimensions: 40x30x50. Fee: 40 DKK." statusOpen={true}/>
+      <FaqRow
+        topic="Will there be lockers on site? "
+        text="Yes, but there is no room for big travel backpacks and suitcases. Dimensions: 40x30x50. Fee: 40 DKK."
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="Can I bring my own food and drinks to the festival? " text="No, that is not possible. There will be a truck close the festival site and entrance, where you can buy canned beer, but you are still not allowed to bring those cans into the festival. However, you will have plenty of time to finish the beer during the 200 meter walk from the truck to the entrance :) You are, however, allowed to bring an empty water bottle to fill up at the water station. " statusOpen={true}/>
+      <FaqRow
+        topic="Can I bring my own food and drinks to the festival? "
+        text="No, that is not possible. There will be a truck close the festival site and entrance, where you can buy canned beer, but you are still not allowed to bring those cans into the festival. However, you will have plenty of time to finish the beer during the 200 meter walk from the truck to the entrance :) You are, however, allowed to bring an empty water bottle to fill up at the water station. "
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="Will there be vegetarian and vegan food options?" text="Yes." statusOpen={true}/>
+      <FaqRow
+        topic="Will there be vegetarian and vegan food options?"
+        text="Yes."
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="If I feel unsafe, who can I talk to and where do I go? " text="You should reach out to our Awareness Team – they will be wearing a white vests and walk around the site. You can ask any festival staff and they will guide you to the Awareness Team." statusOpen={true}/>
+      <FaqRow
+        topic="If I feel unsafe, who can I talk to and where do I go? "
+        text="You should reach out to our Awareness Team – they will be wearing a white vests and walk around the site. You can ask any festival staff and they will guide you to the Awareness Team."
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="Where is lost and found located? " text="At the ticket office during festival days" statusOpen={true}/>
+      <FaqRow
+        topic="Where is lost and found located? "
+        text="At the ticket office during festival days"
+        statusOpen={true}
+      />
       <Line />
-      <FaqRow topic="Can I take photos and videos?" text="Yes, but only if you're using a phone or fixed lens compact camera without enabling flash mode. In other words, no professional cameras. We encourage everyone to stay in the moment and keep the use of phones and cameras to a minimum without disturbing other guests." statusOpen={true}/>
+      <FaqRow
+        topic="Can I take photos and videos?"
+        text="Yes, but only if you're using a phone or fixed lens compact camera without enabling flash mode. In other words, no professional cameras. We encourage everyone to stay in the moment and keep the use of phones and cameras to a minimum without disturbing other guests."
+        statusOpen={true}
+      />
       <Line />
-  </section>
-  <p>For any other questions, please DM us on Facebook or email info@nusnus.dk</p>
- 
+    </section>
+    <p>
+      For any other questions, please DM us on Facebook or email info@nusnus.dk
+    </p>
   </main>
-  <br>
+  <br />
   <hr />
   <Ticketbanner />
   <Footer />
 </MainLayout>
 
 <style>
-.mapswrapper{
-  text-align: center;
-}
-
-.maps{
-  display: flex;
-  justify-content: center;
-  gap: 4rem;
-  margin-top: 3rem;
-}
-.faq_wrapper {
-      margin: 60px 0 80px 0;
+  .mapswrapper {
+    text-align: center;
   }
 
-  h2{
+  .maps {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 3rem;
+  }
+  .faq_wrapper {
+    margin: 60px 0 80px 0;
+  }
+
+  h2 {
     margin-top: 4rem;
   }
 
-  .faqbuttons{
+  .faqbuttons {
     display: flex;
     justify-content: center;
     gap: 5rem;
@@ -143,7 +261,7 @@ const { title } = Astro.props;
     font-size: 1rem;
     width: 120px;
     height: 45px;
-    border: 1px solid var( --text-color);
+    border: 1px solid var(--text-color);
     text-transform: uppercase;
   }
 
@@ -152,9 +270,9 @@ const { title } = Astro.props;
   }
 
   @media (max-width: 768px) {
-    .maps{
-    display: flex;
-flex-direction:column;
-}
+    .maps {
+      display: flex;
+      flex-direction: column;
+    }
   }
-  </style>
+</style>
